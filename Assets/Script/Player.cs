@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    Camera cam;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +26,7 @@ public class Player : MonoBehaviour
 
         }
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
-
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
     }
 }

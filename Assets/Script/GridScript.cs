@@ -5,20 +5,35 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour
 {
+    #region Grid
+
     int gridX = 100;
     int gridY = 100;
 
-    int maxX = 10;
-    int maxY = 10;
+    int maxX = 100;
+    int maxY = 100;
 
-    int howManyUppNegative = 0;
+    int howManyUppNegative = 1;
     int howManyDownNegative = 0;
-    int howManyUppPosetive = 0;
+    int howManyUppPosetive = 1;
     int howManyDownPosetive = 0;
 
-    bool complete = false;
+    #endregion
 
-    public GameObject gridPiece;
+    #region Grid Pieces
+
+    public GameObject BasicGridPiece;
+    public GameObject TreeGridPiece;
+    public GameObject StoneGridPiece;
+    public GameObject IronGridPiece;
+
+    #endregion
+
+    float randomNumberBasic1 = 0;
+    float randomNumberBasic2 = 93;
+    float randomNumberTree = 97;
+    float randomNumberStone = 100;
+    float randomNumberIron = 101;
 
     private void Start()
     {
@@ -27,9 +42,31 @@ public class GridScript : MonoBehaviour
             gridX = maxX;
             while (true)
             {
-                GameObject spawnedPiece = Instantiate(gridPiece);
+                float Number = Random.Range(0, 101);
+                if (Number >= randomNumberBasic1 && Number < randomNumberBasic2)
+                {
+                    GameObject spawnedPiece = Instantiate(BasicGridPiece);
 
-                spawnedPiece.transform.position = new Vector2(gridX, howManyUppPosetive);
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppPosetive);
+                }
+                if (Number >= randomNumberBasic2 && Number < randomNumberTree)
+                {
+                    GameObject spawnedPiece = Instantiate(TreeGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppPosetive);
+                }
+                if (Number >= randomNumberTree && Number < randomNumberStone)
+                {
+                    GameObject spawnedPiece = Instantiate(StoneGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppPosetive);
+                }
+                if (Number >= randomNumberStone && Number < randomNumberIron)
+                {
+                    GameObject spawnedPiece = Instantiate(IronGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppPosetive);
+                }
 
                 gridX--;
 
@@ -39,14 +76,36 @@ public class GridScript : MonoBehaviour
                     break;
                 }
             }
-            gridX = maxX;
 
             gridX = maxX;
+
             while (true)
             {
-                GameObject spawnedPiece = Instantiate(gridPiece);
+                float Number = Random.Range(0, 101);
+                if (Number >= randomNumberBasic1 && Number < randomNumberBasic2)
+                {
+                    GameObject spawnedPiece = Instantiate(BasicGridPiece);
 
-                spawnedPiece.transform.position = new Vector2(gridX, howManyDownPosetive);
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownPosetive);
+                }
+                if (Number >= randomNumberBasic2 && Number < randomNumberTree)
+                {
+                    GameObject spawnedPiece = Instantiate(TreeGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownPosetive);
+                }
+                if (Number >= randomNumberTree && Number < randomNumberStone)
+                {
+                    GameObject spawnedPiece = Instantiate(StoneGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownPosetive);
+                }
+                if (Number >= randomNumberStone && Number < randomNumberIron)
+                {
+                    GameObject spawnedPiece = Instantiate(IronGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownPosetive);
+                }
 
                 gridX--;
 
@@ -61,9 +120,32 @@ public class GridScript : MonoBehaviour
 
             while (true)
             {
-                GameObject spawnedPiece = Instantiate(gridPiece);
 
-                spawnedPiece.transform.position = new Vector2(gridX, howManyUppNegative);
+                float Number = Random.Range(0, 101);
+                if (Number >= randomNumberBasic1 && Number < randomNumberBasic2)
+                {
+                    GameObject spawnedPiece = Instantiate(BasicGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppNegative);
+                }
+                if (Number >= randomNumberBasic2 && Number < randomNumberTree)
+                {
+                    GameObject spawnedPiece = Instantiate(TreeGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppNegative);
+                }
+                if (Number >= randomNumberTree && Number < randomNumberStone)
+                {
+                    GameObject spawnedPiece = Instantiate(StoneGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppNegative);
+                }
+                if (Number >= randomNumberStone && Number < randomNumberIron)
+                {
+                    GameObject spawnedPiece = Instantiate(IronGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyUppNegative);
+                }
 
                 gridX++;
 
@@ -78,9 +160,33 @@ public class GridScript : MonoBehaviour
 
             while (true)
             {
-                GameObject spawnedPiece = Instantiate(gridPiece);
 
-                spawnedPiece.transform.position = new Vector2(gridX, howManyDownNegative);
+
+                float Number = Random.Range(0, 101);
+                if (Number >= randomNumberBasic1 && Number < randomNumberBasic2)
+                {
+                    GameObject spawnedPiece = Instantiate(BasicGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownNegative);
+                }
+                if (Number >= randomNumberBasic2 && Number < randomNumberTree)
+                {
+                    GameObject spawnedPiece = Instantiate(TreeGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownNegative);
+                }
+                if (Number >= randomNumberTree && Number < randomNumberStone)
+                {
+                    GameObject spawnedPiece = Instantiate(StoneGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownNegative);
+                }
+                if (Number >= randomNumberStone && Number < randomNumberIron)
+                {
+                    GameObject spawnedPiece = Instantiate(IronGridPiece);
+
+                    spawnedPiece.transform.position = new Vector2(gridX, howManyDownNegative);
+                }
 
                 gridX++;
 
