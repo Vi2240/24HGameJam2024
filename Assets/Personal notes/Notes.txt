@@ -1,0 +1,2 @@
+Fienden kommer att åka mot den närmast objektet som inte är en spelare
+Fienden spawnar på ett random ställe runt basen
