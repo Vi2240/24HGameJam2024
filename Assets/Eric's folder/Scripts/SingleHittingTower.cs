@@ -4,21 +4,15 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShootingTower : MonoBehaviour
+public class SingleHittingTower : MonoBehaviour
 {
-    [SerializeField] ShootingTowerValues towerObj;
+    [SerializeField] ShootingTowerValues shootingTowerObj;
+    
     List<GameObject> enemies;
-    //GameObject[] enemies;
-    //ScriptThatsJustThere[] ScriptThatsJustThere;
-
-    void Start()
-    {
-
-    }
+    Coroutine currentCoroutine = null;
 
     void Update()
     {
-
         enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
 
         //var objects = GameObject.FindObjectsByType<ScriptThatsJustThere>(FindObjectsSortMode.None);
@@ -31,21 +25,23 @@ public class ShootingTower : MonoBehaviour
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
 
-            if (distanceToEnemy <= towerObj.range)
-            {
-                //var currentShootRoutine = StartCoroutine(ShootRoutine());
-                Destroy(enemy);
+            if (distanceToEnemy <= shootingTowerObj.range && currentCoroutine == null)
+            {   
+                currentCoroutine = StartCoroutine(ShootRoutine(enemy));
             }
         }
     }
 
-    //IEnumerator ShootRoutine()
-    //{
-
-    //}
-
-    void Shoot()
+    IEnumerator ShootRoutine(GameObject enemy)
     {
+        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(shootingTowerObj.damage);
+        }
 
+        yield return new WaitForSeconds(shootingTowerObj.fireRate);
+        
+        currentCoroutine = null;
     }
 }
