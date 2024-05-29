@@ -1,2 +1,3 @@
 Fienden kommer att åka mot den närmast objektet som inte är en spelare
-Fienden spawnar på ett random ställe runt basen
+Fienden spawnar på ett random ställe runt kanten av kameran
+När sidan av kameran har blivit bestämt så spawnas all fiender den natten på ett random punkt på den valda sidan
