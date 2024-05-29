@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eb6018729adf7849ac4859e2f5c0d7a, type: 3}
-  m_Name: ShootingTowerValues
+  m_Name: MiniTurret
   m_EditorClassIdentifier: 
-  damage: 1
-  range: 5
-  fireRate: 1
+  attackSoundEffect: {fileID: 8300000, guid: bc65bb6eec90fa2469295839a386ec84, type: 3}
+  damage: 5
+  range: 7
+  fireRate: 2

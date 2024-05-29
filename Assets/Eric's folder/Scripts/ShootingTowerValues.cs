@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class ShootingTowerValues : ScriptableObject
 {
+    public AudioClip attackSoundEffect;
+    
     public int damage;
     public float range;
     public float fireRate;

@@ -18,8 +18,8 @@ public class MultiHittingTower : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             if (enemy != null)
-            {
-                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            {   
+                float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
 
                 if (distanceToEnemy <= shootingTowerObj.range)
                 {
@@ -47,6 +47,10 @@ public class MultiHittingTower : MonoBehaviour
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(shootingTowerObj.damage);
+                if (shootingTowerObj.attackSoundEffect != null)
+                {
+                    AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);
+                }
             }
         }
 
