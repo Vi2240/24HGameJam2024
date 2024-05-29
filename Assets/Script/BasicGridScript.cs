@@ -10,6 +10,28 @@ public class BasicGridScript : MonoBehaviour
     bool hovering;
     bool boughtOnThisTile = false;
 
+    float DecorationRandomFalse1 = 0f;
+    float DecorationRandomFalse2 = 90f;
+    float DecorationRandomTrue = 101f;
+
+    private void Start()
+    {
+        float Number = Random.Range(0, 101);
+        if (Number >= DecorationRandomFalse1 && Number < DecorationRandomFalse2)
+        {
+            if (gameObject.transform.GetChild(1) != null)
+            {
+                gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            }
+        }
+        if (Number >= DecorationRandomFalse2 && Number < DecorationRandomTrue)
+        {
+           if (gameObject.transform.GetChild(1) != null)
+           {
+                gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+    }
 
     private void OnMouseOver()
     {
@@ -60,6 +82,24 @@ public class BasicGridScript : MonoBehaviour
 
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+        }
+
+        if (Input.GetMouseButtonDown(2))
+        {
+            if (buyingTurret1)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyingTurret1 = false;
+                }
+            }
+        }
+
+        if (!buyingTurret1 && !boughtOnThisTile)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }

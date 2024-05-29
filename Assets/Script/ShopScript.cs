@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-    Player player;
+
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
+
     }
 
     public void BuyTurret(int Price)
@@ -19,5 +19,40 @@ public class ShopScript : MonoBehaviour
         {
             item.buyingTurret1 = true;
         }
+    }
+
+    public void BuySawMill(int Price)
+    {
+        TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
+
+        foreach (TreeGridScript item in myItems)
+        {
+            item.buySawMill = true;
+        }
+    }
+
+    public void BuyStoneGrinder(int Price)
+    {
+        StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
+
+        foreach (StoneGridScript item in myItems)
+        {
+            item.buyStoneGrinder = true;
+        }
+    }
+
+    public void BuyIronMine(int Price)
+    {
+        IronScript[] myItems = FindObjectsOfType(typeof(IronScript)) as IronScript[];
+
+        foreach (IronScript item in myItems)
+        {
+            item.buyIronMine = true;
+        }
+    }
+
+    public void WhatToBuy()
+    {
+
     }
 }
