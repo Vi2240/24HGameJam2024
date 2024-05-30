@@ -22,7 +22,7 @@ public class RaycastTower : MonoBehaviour
 
             if (hit.collider != null)
             {
-                var tryEnemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
+                var tryEnemy = hit.collider.gameObject.GetComponent<EnemyScript>();
                 if (tryEnemy != null && currentCoroutine == null)
                 {
                     currentCoroutine = StartCoroutine(ShootingRoutine(tryEnemy.transform.gameObject));

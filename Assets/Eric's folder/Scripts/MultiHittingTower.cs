@@ -48,10 +48,10 @@ public class MultiHittingTower : MonoBehaviour
             enemiesToRemove.Add(enemy);
             Debug.Log("Changed tag to " + enemy.tag);
 
-            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            EnemyScript enemyHealth = enemy.GetComponent<EnemyScript>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(shootingTowerObj.damage);
+                enemyHealth.EnemyTakeDamage(shootingTowerObj.damage);
                 if (shootingTowerObj.attackSoundEffect != null)
                 {
                     AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);

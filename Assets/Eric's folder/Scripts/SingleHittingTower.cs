@@ -10,6 +10,8 @@ public class SingleHittingTower : MonoBehaviour
 
     [SerializeField] Vector3 detectionBoxSize;
     [SerializeField] Vector3 detectionBoxOffset;
+
+    [SerializeField] float maxHealth = 10f;
     
     List<GameObject> enemies;
     Coroutine currentCoroutine = null;
@@ -54,10 +56,11 @@ public class SingleHittingTower : MonoBehaviour
 
     IEnumerator ShootRoutine(GameObject enemy)
     {
-        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+        EnemyScript enemyHealth = enemy.GetComponent<EnemyScript>();
         if (enemyHealth != null)
         {
-            enemyHealth.TakeDamage(shootingTowerObj.damage);
+            Debug.Log("I am attacking enemy");
+            enemyHealth.EnemyTakeDamage(shootingTowerObj.damage);
 
             if (shootingTowerObj.attackSoundEffect != null)
             {
@@ -72,6 +75,15 @@ public class SingleHittingTower : MonoBehaviour
         yield return new WaitForSeconds(shootingTowerObj.fireRate);
 
         currentCoroutine = null;
+    }
+
+    public void TurretTakeDamage(int damageToTake)
+    {
+        maxHealth -= damageToTake;
+        if (maxHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()
