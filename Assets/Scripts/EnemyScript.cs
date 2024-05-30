@@ -1,6 +1,4 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-
 public class EnemyScript : MonoBehaviour
 {
     [Header("Movement")]
@@ -25,6 +23,21 @@ public class EnemyScript : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
         transform.up = target.transform.position - transform.position;
+    }
+
+    void EnemyHealth()
+    {
+        
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            enemySpeed = 0f;
+            Debug.Log("I have collided!");
+            Destroy(this.gameObject);
+        }
     }
 }
 //Previous tries
