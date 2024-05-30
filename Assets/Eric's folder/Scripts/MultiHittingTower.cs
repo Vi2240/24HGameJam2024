@@ -9,6 +9,9 @@ public class MultiHittingTower : MonoBehaviour
 
     List<GameObject> enemies;
 
+    [SerializeField] int lockOnLimit = 3;
+    public int amountOfEnemiesInList;
+
     void Update()
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
@@ -21,7 +24,7 @@ public class MultiHittingTower : MonoBehaviour
             {   
                 float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
 
-                if (distanceToEnemy <= shootingTowerObj.range)
+                if (distanceToEnemy <= shootingTowerObj.range && amountOfEnemiesInList < lockOnLimit)
                 {
                     StartCoroutine(ShootRoutine(enemy, enemiesToRemove));
                 }
@@ -39,6 +42,8 @@ public class MultiHittingTower : MonoBehaviour
     {
         if (enemy != null)
         {
+            amountOfEnemiesInList++;
+
             enemy.tag = "SafeEnemy";
             enemiesToRemove.Add(enemy);
             Debug.Log("Changed tag to " + enemy.tag);
@@ -51,6 +56,10 @@ public class MultiHittingTower : MonoBehaviour
                 {
                     AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);
                 }
+                if (shootingTowerObj.hitEffect != null)
+                {
+                    Instantiate(shootingTowerObj.hitEffect, enemyHealth.transform.position, shootingTowerObj.hitEffect.transform.rotation);
+                }
             }
         }
 
@@ -60,5 +69,7 @@ public class MultiHittingTower : MonoBehaviour
         {
             enemy.tag = "Enemy";
         }
+
+        amountOfEnemiesInList--;
     }
 }

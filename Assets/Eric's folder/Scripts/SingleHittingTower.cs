@@ -13,65 +13,43 @@ public class SingleHittingTower : MonoBehaviour
     
     List<GameObject> enemies;
     Coroutine currentCoroutine = null;
-
-    //GameObject FindClosestEnemy()
-    //{
-    //    foreach(GameObject enemy in enemies)
-    //    {
-    //        if (enemy != null)
-    //        {
-    //            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-
-    //            yield return new WaitForSeconds(shootingTowerObj.fireRate);
-
-    //            float distanceToNewEnemy = Vector2.Distance(transform.position, enemy.transform.position);
-
-    //            if (distanceToNewEnemy > distanceToEnemy)
-    //            {
-    //                var closestEnemy = enemy;
-    //            }
-    //        }
-    //    }
-    //}
     
     void Update()
     {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
+        GameObject closestEnemy = FindClosestEnemy();
+
+        if (closestEnemy != null)
+        {
+            //bool detected = Physics2D.OverlapBox(transform.position + detectionBoxOffset, detectionBoxSize, 0);
+
+            var enemyCollider = Physics2D.OverlapBox(transform.position + detectionBoxOffset, detectionBoxSize, 0);
+
+            if (enemyCollider != null && currentCoroutine == null)
+            {
+                currentCoroutine = StartCoroutine(ShootRoutine(enemyCollider.gameObject));
+            }
+        }
+    }
+
+    GameObject FindClosestEnemy()
+    {
+        List<GameObject> enemies = GameObject.FindGameObjectsWithTag("Enemy").ToList();
         enemies.AddRange(GameObject.FindGameObjectsWithTag("SafeEnemy"));
 
-        //enemies = GameObject.FindGameObjectsWithTag("SafeEnemy").ToList();
-
-        //foreach (GameObject enemy in enemies)
-        //{
-        //    float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-
-        //    if (distanceToEnemy <= shootingTowerObj.range && currentCoroutine == null)
-        //    {   
-        //        currentCoroutine = StartCoroutine(ShootRoutine(enemy));
-        //    }
-        //}
+        GameObject closestEnemy = null;
+        float closestDistanceToEnemy = Mathf.Infinity;
 
         foreach (GameObject enemy in enemies)
         {
-            if (enemy != null)
+            float distanceToEnemy = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distanceToEnemy < closestDistanceToEnemy && distanceToEnemy <= shootingTowerObj.range)
             {
-                //bool detected = Physics2D.OverlapBox(transform.position + detectionBoxOffset, detectionBoxSize, 0);
-
-                var enemyCollider = Physics2D.OverlapBox(transform.position + detectionBoxOffset, detectionBoxSize, 0);
-
-                //if (detected == true && currentCoroutine == null)
-                //{
-                //    Debug.Log("Start the routine!");
-                //    currentCoroutine = StartCoroutine(ShootRoutine(enemy));
-                //}
-
-                if (enemyCollider != null && currentCoroutine == null)
-                {
-                    currentCoroutine = StartCoroutine(ShootRoutine(enemyCollider.gameObject));
-                }
-                break;
-            }  
+                closestDistanceToEnemy = distanceToEnemy;
+                closestEnemy = enemy;
+            }
         }
+
+        return closestEnemy;
     }
 
     IEnumerator ShootRoutine(GameObject enemy)
@@ -84,6 +62,10 @@ public class SingleHittingTower : MonoBehaviour
             if (shootingTowerObj.attackSoundEffect != null)
             {
                 AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);
+            }
+            if (shootingTowerObj.hitEffect != null)
+            {
+                Instantiate(shootingTowerObj.hitEffect, enemyHealth.transform.position, shootingTowerObj.hitEffect.transform.rotation);
             }
         }
 

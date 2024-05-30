@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BigTurret
   m_EditorClassIdentifier: 
   attackSoundEffect: {fileID: 8300000, guid: 23f13e147d0936743821497bac5d470f, type: 3}
+  hitEffect: {fileID: 0}
   damage: 1
-  range: 5
+  range: 7
   fireRate: 0.3

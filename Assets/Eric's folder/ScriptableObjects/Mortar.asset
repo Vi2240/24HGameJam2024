@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8eb6018729adf7849ac4859e2f5c0d7a, type: 3}
-  m_Name: MiniTurret
+  m_Name: Mortar
   m_EditorClassIdentifier: 
-  attackSoundEffect: {fileID: 8300000, guid: 23f13e147d0936743821497bac5d470f, type: 3}
-  hitEffect: {fileID: 0}
-  damage: 1
-  range: 7
-  fireRate: 0.5
+  attackSoundEffect: {fileID: 8300000, guid: bc65bb6eec90fa2469295839a386ec84, type: 3}
+  hitEffect: {fileID: 3009347263045602172, guid: d136815285635e9438353995417fa3cb, type: 3}
+  damage: 10
+  range: 550
+  fireRate: 5
