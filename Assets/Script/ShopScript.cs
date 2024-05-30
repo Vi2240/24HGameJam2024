@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ShopScript : MonoBehaviour
 {
-
+    ResourceVault resourceVault;
 
     private void Start()
     {
-
+        resourceVault = FindObjectOfType<ResourceVault>();
     }
 
     #region BuyStuff
