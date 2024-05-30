@@ -113,7 +113,7 @@ public class GridScript : MonoBehaviour
 
     private void PlacePiece(int uppOrDown)
     {
-        if(uppOrDown == 0 && gridX == 0 || uppOrDown == 0 && gridX == 1 || uppOrDown == 1 && gridX == 0 || uppOrDown == 1 && gridX == 1 || uppOrDown == 1 && gridX == -1 || uppOrDown == -1 && gridX == 0 || uppOrDown == -1 && gridX == 1 || uppOrDown == -1 && gridX == -1)
+        if(uppOrDown == 0 && gridX == 0 || uppOrDown == 0 && gridX == 1 || uppOrDown == 0 && gridX == -1 || uppOrDown == 1 && gridX == 0 || uppOrDown == 1 && gridX == 1 || uppOrDown == 1 && gridX == -1 || uppOrDown == -1 && gridX == 0 || uppOrDown == -1 && gridX == 1 || uppOrDown == -1 && gridX == -1)
         {
             if(uppOrDown == 0 && gridX == 0)
             {
