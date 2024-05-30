@@ -8,7 +8,9 @@ public class ResourceTower : MonoBehaviour
     [SerializeField] int itemID;
 
     [Header("ResourceGathering")]
+    [Header("1")]
     [SerializeField] float amountOfItem;
+    [Header("2 \n 3 \n 5 \n 10")]
     [SerializeField] float produceRate;
 
     bool timeToGive;
