@@ -31,6 +31,7 @@ public class TreeGridScript : MonoBehaviour
 
                 boughtOnThisTile = true;
 
+                gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
         }
@@ -66,7 +67,7 @@ public class TreeGridScript : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 100);
+            gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 100);
         }
     }
 
@@ -82,7 +83,7 @@ public class TreeGridScript : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
+            gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
         }
     }
 }

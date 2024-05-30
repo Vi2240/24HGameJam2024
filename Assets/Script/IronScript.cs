@@ -30,6 +30,7 @@ public class IronScript : MonoBehaviour
 
                 boughtOnThisTile = true;
 
+                gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
         }
@@ -65,7 +66,7 @@ public class IronScript : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 100);
+            gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 100);
         }
     }
 
@@ -81,7 +82,7 @@ public class IronScript : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
+            gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
         }
     }
 }

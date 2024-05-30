@@ -35,7 +35,7 @@ public class GridScript : MonoBehaviour
 
     float randomNumberBasic1 = 0;
     float randomNumberBasic2 = 96f;
-    float randomNumberTree = 99f;
+    float randomNumberTree = 98.5f;
     float randomNumberStone = 100f;
     float randomNumberIron = 100.1f;
 

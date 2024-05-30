@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8885205906480255587}
   - component: {fileID: 2122236762198343540}
   m_Layer: 0
-  m_Name: drill Mini 16x16
+  m_Name: drill Mini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 2441850205731139839}
   - component: {fileID: 3015243626636920295}
   - component: {fileID: -1416452039902767556}
+  - component: {fileID: 6815069487720823239}
   m_Layer: 0
   m_Name: StoneGridPiece
   m_TagString: Untagged
@@ -290,3 +291,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyStoneGrinder: 0
+--- !u!114 &6815069487720823239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7436467649055352093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb21889307905146976191865ee379b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemID: 2
+  amountOfItem: 1
+  produceRate: 5
+  skins:
+  - {fileID: 5602316386147856934}
+  - {fileID: 4436722132429370915}
+  - {fileID: 0}
+  - {fileID: 0}
+  modifyPercentForUpgrade:
+  - 0
+  - 1
+  - 1.5
+  - 2

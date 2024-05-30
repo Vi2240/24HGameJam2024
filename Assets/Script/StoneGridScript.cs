@@ -30,6 +30,7 @@ public class StoneGridScript : MonoBehaviour
 
                 boughtOnThisTile = true;
 
+                gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
         }

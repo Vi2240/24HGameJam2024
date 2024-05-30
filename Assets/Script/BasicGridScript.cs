@@ -6,6 +6,7 @@ using UnityEngine;
 public class BasicGridScript : MonoBehaviour
 {
     public bool buyingTurret1 = false;
+    public bool buyingBank = false;
     
 
     bool hovering;
@@ -38,11 +39,15 @@ public class BasicGridScript : MonoBehaviour
     private void OnMouseOver()
     {
         hovering = true;
-        if (buyingTurret1)
+        if (buyingTurret1 || buyingBank)
         {
-            if (!boughtOnThisTile && !isTouchingbase)
+            if (!boughtOnThisTile && !isTouchingbase && buyingTurret1)
             {
                 transform.GetChild(0).gameObject.SetActive(true);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyingBank)
+            {
+                transform.GetChild(2).gameObject.SetActive(true);
             }
         }
         else
@@ -54,11 +59,15 @@ public class BasicGridScript : MonoBehaviour
     private void OnMouseExit()
     {
         hovering = false;
-        if (buyingTurret1)
+        if (buyingTurret1 || buyingBank)
         {
-            if(!boughtOnThisTile && !isTouchingbase)
+            if(!boughtOnThisTile && !isTouchingbase && buyingTurret1)
             {
                 transform.GetChild(0).gameObject.SetActive(false);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyingBank)
+            {
+                transform.GetChild(2).gameObject.SetActive(false);
             }
         }
         else
@@ -84,6 +93,21 @@ public class BasicGridScript : MonoBehaviour
 
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+
+            if (buyingBank && hovering && !boughtOnThisTile && !isTouchingbase)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyingBank = false;
+                }
+
+                boughtOnThisTile = true;
+
+                gameObject.GetComponent<ResourceTower>().Upgrade();
+                transform.GetChild(2).gameObject.SetActive(true);
+            }
         }
 
         if (Input.GetMouseButtonDown(2))
@@ -97,11 +121,25 @@ public class BasicGridScript : MonoBehaviour
                     item.buyingTurret1 = false;
                 }
             }
+
+            if (buyingBank && !isTouchingbase)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyingBank = false;
+                }
+            }
         }
 
         if (!buyingTurret1 && !boughtOnThisTile && !isTouchingbase)
         {
             transform.GetChild(0).gameObject.SetActive(false);
+        }
+        if (!buyingBank && !boughtOnThisTile && !isTouchingbase)
+        {
+            transform.GetChild(2).gameObject.SetActive(false);
         }
     }
 

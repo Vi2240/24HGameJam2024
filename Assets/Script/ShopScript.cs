@@ -11,6 +11,8 @@ public class ShopScript : MonoBehaviour
 
     }
 
+    #region BuyStuff
+
     public void BuyTurret(int Price)
     {
         BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
@@ -51,8 +53,15 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void WhatToBuy()
+    public void BuyBank(int price)
     {
+        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
+        foreach (BasicGridScript item in myItems)
+        {
+            item.buyingBank = true;
+        }
     }
+
+    #endregion
 }
