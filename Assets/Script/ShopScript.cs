@@ -25,7 +25,7 @@ public class ShopScript : MonoBehaviour
 
     #region Defense
 
-    public void BuyTurret(int Price)
+    public void BuyTurret()
     {
         BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -39,7 +39,7 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void BuyTeslaTower(int Price)
+    public void BuyTeslaTower()
     {
         BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -53,7 +53,7 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void BuyMortal(int Price)
+    public void BuyMortal()
     {
         BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -71,7 +71,7 @@ public class ShopScript : MonoBehaviour
 
     #region Resources
 
-    public void BuySawMill(int Price)
+    public void BuySawMill()
     {
         if (resourceVault.items[0] >= 50f)
         {
@@ -86,7 +86,7 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void BuyStoneGrinder(int Price)
+    public void BuyStoneGrinder()
     {
         if(resourceVault.items[0] >= 75f && resourceVault.items[1] >= 50f)
         {
@@ -101,7 +101,7 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void BuyIronMine(int Price)
+    public void BuyIronMine()
     {
         IronScript[] myItems = FindObjectsOfType(typeof(IronScript)) as IronScript[];
 
@@ -115,7 +115,7 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public void BuyBank(int price)
+    public void BuyBank()
     {
         if (resourceVault.items[0] >= 30f && resourceVault.items[1] >= 20f)
         {
@@ -155,6 +155,8 @@ public class ShopScript : MonoBehaviour
     {
         objectToUpgrade.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         objectToUpgrade.gameObject.transform.GetChild(3).gameObject.SetActive(true);
+
+        objectToUpgrade.gameObject.transform.GetComponent<BasicGridScript>().upgradeBought = true;
         if (resourceVault.items[0] >= 50f)
         {
 

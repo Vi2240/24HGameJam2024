@@ -14,6 +14,7 @@ public class BasicGridScript : MonoBehaviour
     bool isTouchingbase = false;
     bool bankIsBough = false;
     bool turretIsBought = false;
+    public bool upgradeBought = false;
 
     #region Decorations
 
@@ -64,6 +65,8 @@ public class BasicGridScript : MonoBehaviour
         #endregion
 
         shopScript = FindObjectOfType<ShopScript>();
+
+        upgradeBought = false;
     }
 
     private void OnMouseOver()
@@ -117,7 +120,7 @@ public class BasicGridScript : MonoBehaviour
 
                 }
 
-                if (turretIsBought)
+                if (turretIsBought && !upgradeBought)
                 {
                     bool yes = true;
 
@@ -129,7 +132,7 @@ public class BasicGridScript : MonoBehaviour
             {
                 if (!turretIsBought)
                 {
-                    StartCoroutine(TestRoutine());
+                    StartCoroutine(DisapereDelayRoutine());
                 }
             }
 
@@ -148,6 +151,7 @@ public class BasicGridScript : MonoBehaviour
                 turretIsBought = true;
 
                 transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
             }
 
             if (buyingBank && hovering && !boughtOnThisTile && !isTouchingbase)
@@ -164,6 +168,7 @@ public class BasicGridScript : MonoBehaviour
 
                 gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(2).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
             }
 
             #endregion
@@ -210,7 +215,7 @@ public class BasicGridScript : MonoBehaviour
         }
     }
 
-    IEnumerator TestRoutine()
+    IEnumerator DisapereDelayRoutine()
     {
 
 
