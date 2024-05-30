@@ -130,3 +130,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingTowerObj: {fileID: 11400000, guid: 1d0cdcef97526a044bb6e4f6c710a247, type: 2}
+  lockOnLimit: 3
+  amountOfEnemiesInList: 0

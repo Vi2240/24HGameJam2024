@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSoundEffect: {fileID: 8300000, guid: 23f13e147d0936743821497bac5d470f, type: 3}
   hitEffect: {fileID: 0}
+  spriteUp: {fileID: 21300000, guid: 43892d8a20a41c141aa639ac0b25d367, type: 3}
+  spriteDown: {fileID: 21300000, guid: b057fa8a2e5909b4fba5ee269528bdcb, type: 3}
+  spriteLeft: {fileID: 21300000, guid: dfdc657b39cc10245a285232b86a4b4e, type: 3}
+  spriteRight: {fileID: 21300000, guid: 425561a6683e3d04c8f0207bafe56362, type: 3}
   damage: 1
   range: 7
   fireRate: 0.3
