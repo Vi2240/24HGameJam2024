@@ -9,13 +9,12 @@ public class IronScript : MonoBehaviour
     bool hovering;
     bool boughtOnThisTile = false;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         buyIronMine = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

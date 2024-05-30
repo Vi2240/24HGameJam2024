@@ -1,0 +1,328 @@
+fileFormatVersion: 2
+guid: c0e0e7ca8f43c8f4c8efcba6e1d7f79d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Prop burning barrel_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 68
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a01f76d9c9c9ca43bff4059fa7550bc
+      internalID: -2127535635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop burning barrel_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 68
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58f3e2adbe8e2d84ba586c80da54ef77
+      internalID: -955295912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop burning barrel_2
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 36
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af15b4f9f31ef494e8a450205f8a3cee
+      internalID: -1737036402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop burning barrel_3
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 36
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ca10abd5358ac41b44294c81d20bc2
+      internalID: 703133756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop burning barrel_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 4
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f9dfed5532eac4a96700293f0d61b7
+      internalID: 679615406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prop burning barrel_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 4
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b55f7659a02e442aee7c792f6e0931
+      internalID: 1647606632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -20, y: -24}
+      - {x: -16, y: -24}
+      - {x: -19, y: -27}
+      - {x: -21, y: -28}
+      - {x: -23, y: -30}
+      - {x: -23, y: -44}
+      - {x: -10, y: -44}
+      - {x: -10, y: -30}
+      - {x: -14, y: -21}
+      - {x: -15, y: -17}
+      - {x: -16, y: -17}
+      - {x: -17, y: -20}
+      - {x: -17, y: -23}
+      - {x: -20, y: -23}
+    - - {x: 18, y: -19}
+      - {x: 14, y: -19}
+      - {x: 14, y: -27}
+      - {x: 13, y: -27}
+      - {x: 11, y: -28}
+      - {x: 9, y: -30}
+      - {x: 9, y: -44}
+      - {x: 22, y: -44}
+      - {x: 22, y: -30.0032}
+      - {x: 19, y: -27}
+      - {x: 19, y: -26}
+      - {x: 17, y: -21}
+      - {x: 18, y: -21}
+    - - {x: -13, y: 12}
+      - {x: -14, y: 13}
+      - {x: -16, y: 13}
+      - {x: -16, y: 9}
+      - {x: -20, y: 9}
+      - {x: -20, y: 4}
+      - {x: -23, y: 6}
+      - {x: -23, y: -12}
+      - {x: -10, y: -12}
+      - {x: -10, y: 2}
+      - {x: -11, y: 4}
+      - {x: -12, y: 5}
+      - {x: -12, y: 11}
+    - - {x: 14, y: 11}
+      - {x: 16, y: 7}
+      - {x: 11, y: 5}
+      - {x: 9, y: 2}
+      - {x: 9, y: -12}
+      - {x: 22, y: -12}
+      - {x: 22, y: 4}
+      - {x: 20, y: 10}
+      - {x: 17, y: 12}
+      - {x: 14, y: 12}
+    - - {x: -14, y: 48}
+      - {x: -15, y: 48}
+      - {x: -20, y: 38}
+      - {x: -23, y: 34}
+      - {x: -23, y: 20}
+      - {x: -10, y: 20}
+      - {x: -10, y: 34}
+      - {x: -12, y: 38}
+      - {x: -14, y: 40}
+      - {x: -14, y: 43}
+      - {x: -12, y: 47}
+    - - {x: 17, y: 46}
+      - {x: 9, y: 34}
+      - {x: 9, y: 20}
+      - {x: 22, y: 20}
+      - {x: 22, y: 34}
+      - {x: 20, y: 36}
+      - {x: 20, y: 44}
+      - {x: 18, y: 46}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Prop burning barrel_0: -2127535635
+      Prop burning barrel_1: -955295912
+      Prop burning barrel_2: -1737036402
+      Prop burning barrel_3: 703133756
+      Prop burning barrel_4: 679615406
+      Prop burning barrel_5: 1647606632
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

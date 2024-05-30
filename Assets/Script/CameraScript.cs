@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
@@ -8,13 +9,12 @@ public class CameraScript : MonoBehaviour
     float cameraSize = 10;
 
     float maxCameraSize = 17f;
-    // Start is called before the first frame update
+
     void Start()
     {
         Camera.main.orthographicSize = cameraSize;
     }
 
-    // Update is called once per frame
     void Update()
     {
 

@@ -6,9 +6,11 @@ using UnityEngine;
 public class BasicGridScript : MonoBehaviour
 {
     public bool buyingTurret1 = false;
+    
 
     bool hovering;
     bool boughtOnThisTile = false;
+    bool isTouchingbase = false;
 
     float DecorationRandomFalse1 = 0f;
     float DecorationRandomFalse2 = 90f;
@@ -38,7 +40,7 @@ public class BasicGridScript : MonoBehaviour
         hovering = true;
         if (buyingTurret1)
         {
-            if (!boughtOnThisTile)
+            if (!boughtOnThisTile && !isTouchingbase)
             {
                 transform.GetChild(0).gameObject.SetActive(true);
             }
@@ -54,7 +56,7 @@ public class BasicGridScript : MonoBehaviour
         hovering = false;
         if (buyingTurret1)
         {
-            if(!boughtOnThisTile)
+            if(!boughtOnThisTile && !isTouchingbase)
             {
                 transform.GetChild(0).gameObject.SetActive(false);
             }
@@ -69,7 +71,7 @@ public class BasicGridScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(buyingTurret1 && hovering && !boughtOnThisTile)
+            if(buyingTurret1 && hovering && !boughtOnThisTile && !isTouchingbase)
             {
                 BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -86,7 +88,7 @@ public class BasicGridScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(2))
         {
-            if (buyingTurret1)
+            if (buyingTurret1 && !isTouchingbase)
             {
                 BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -97,9 +99,17 @@ public class BasicGridScript : MonoBehaviour
             }
         }
 
-        if (!buyingTurret1 && !boughtOnThisTile)
+        if (!buyingTurret1 && !boughtOnThisTile && !isTouchingbase)
         {
             transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 3)
+        {
+            isTouchingbase = true;
         }
     }
 }
