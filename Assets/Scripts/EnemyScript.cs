@@ -11,9 +11,12 @@ public class EnemyScript : MonoBehaviour
     [Header("Health")]
     [SerializeField] float maxHealth = 100f;
 
+    [Header("Detection")]
     [SerializeField] float detectionSphereSize;
     [SerializeField] Vector3 detectionSphereOffset;
+    [SerializeField] LayerMask targetLayer;
 
+    [Header("Attacking")]
     [SerializeField]  EnemyAttackingValues attackingEnemy;
 
     List<GameObject> buildungTargets;
@@ -27,21 +30,19 @@ public class EnemyScript : MonoBehaviour
         {
             EnemyMovement();
         }
-
+        
         GameObject closestTargets = GetClosestTarget(buildungTargets);
-        Debug.Log(closestTargets);
         if (closestTargets != null)
         {
-            var buildingCollider = Physics2D.OverlapCircle(transform.position + detectionSphereOffset, detectionSphereSize, 0);
+            var buildingCollider = Physics2D.OverlapCircle(transform.position + detectionSphereOffset, detectionSphereSize, targetLayer);
 
-            //Debug.Log(buildingCollider + "  " + currentCoroutine);
             if (buildingCollider != null && currentCoroutine == null)
             {
                 currentCoroutine = StartCoroutine(AttackingTowerRoutine(buildingCollider.gameObject));
             }
         }
     }
-
+    
     void EnemyMovement()
     {
         GameObject closestTarget = GetClosestTarget(buildungTargets);
@@ -117,3 +118,6 @@ public class EnemyScript : MonoBehaviour
 //    closestDistanceToBuilding = distanceToBuilding;
 //    closestTarget = target;
 //}
+
+//Debug.Log(closestTargets);
+//Debug.Log(buildingCollider + "  " + currentCoroutine);

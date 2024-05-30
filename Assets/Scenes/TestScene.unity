@@ -136,6 +136,10 @@ PrefabInstance:
       value: BigTurret
       objectReference: {fileID: 0}
     - target: {fileID: 694755605898419713, guid: 49d27e311450b2f429e261ee15b2babc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 694755605898419713, guid: 49d27e311450b2f429e261ee15b2babc, type: 3}
       propertyPath: m_TagString
       value: Building
       objectReference: {fileID: 0}
@@ -178,6 +182,10 @@ PrefabInstance:
     - target: {fileID: 1059126291497731273, guid: 49d27e311450b2f429e261ee15b2babc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4091464968616117253, guid: 49d27e311450b2f429e261ee15b2babc, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -237,6 +245,9 @@ MonoBehaviour:
   maxHealth: 10
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 9e5ab34e0a5ab0d419d3f3750d9ed196, type: 2}
 --- !u!58 &444548260
 CircleCollider2D:
@@ -342,6 +353,9 @@ MonoBehaviour:
   maxHealth: 10
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 9e5ab34e0a5ab0d419d3f3750d9ed196, type: 2}
 --- !u!4 &479137896
 Transform:
@@ -520,6 +534,9 @@ MonoBehaviour:
   maxHealth: 10
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 9e5ab34e0a5ab0d419d3f3750d9ed196, type: 2}
 --- !u!4 &601559013
 Transform:
@@ -606,6 +623,9 @@ MonoBehaviour:
   maxHealth: 10
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 9e5ab34e0a5ab0d419d3f3750d9ed196, type: 2}
 --- !u!4 &820272982
 Transform:
@@ -673,6 +693,9 @@ MonoBehaviour:
   maxHealth: 5
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 1b9f2e6eb7d30bc4ea92ed0b57d2377b, type: 2}
 --- !u!58 &841400025
 CircleCollider2D:
@@ -1080,6 +1103,9 @@ MonoBehaviour:
   maxHealth: 10
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 9e5ab34e0a5ab0d419d3f3750d9ed196, type: 2}
 --- !u!4 &1653960275
 Transform:
@@ -1231,6 +1257,9 @@ MonoBehaviour:
   maxHealth: 100
   detectionSphereSize: 1
   detectionSphereOffset: {x: 0, y: 0, z: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 256
   attackingEnemy: {fileID: 11400000, guid: 5907df38dc0278d4ca3686c91f8565e3, type: 2}
 --- !u!58 &2001163366
 CircleCollider2D:
