@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
 
             Camera.main.transform.position = Vector3.MoveTowards(Camera.main.transform.position, mousepos, Distance * floatCameraSpeed * Time.deltaTime);
         }
-        
+
+        //Camera.main.transform.position = new Vector2(Mathf.Clamp(Camera.main.transform.position.x, -27, 27), Mathf.Clamp(Camera.main.transform.position.y, 36, 36));
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
     }

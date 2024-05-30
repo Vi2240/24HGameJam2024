@@ -104,7 +104,7 @@ public class GridScript : MonoBehaviour
                 }
             }
 
-            if (howManyUppPosetive >= 10)
+            if (howManyUppPosetive >= maxY)
             {
                 break;
             }

@@ -6,12 +6,24 @@ public class ShopScript : MonoBehaviour
 {
     ResourceVault resourceVault;
 
+    #region
+
+    [SerializeField] GameObject turretUpgradeVisuals;
+
+    GameObject objectToUpgrade;
+
+    #endregion
+
     private void Start()
     {
         resourceVault = FindObjectOfType<ResourceVault>();
+
+        turretUpgradeVisuals.SetActive(false);
     }
 
     #region BuyStuff
+
+    #region Defense
 
     public void BuyTurret(int Price)
     {
@@ -21,25 +33,71 @@ public class ShopScript : MonoBehaviour
         {
             item.buyingTurret1 = true;
         }
+        if (resourceVault.items[0] >= 50f)
+        {
+
+        }
     }
+
+    public void BuyTeslaTower(int Price)
+    {
+        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+        foreach (BasicGridScript item in myItems)
+        {
+            item.buyingTurret1 = true;
+        }
+        if (resourceVault.items[0] >= 50f)
+        {
+
+        }
+    }
+
+    public void BuyMortal(int Price)
+    {
+        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+        foreach (BasicGridScript item in myItems)
+        {
+            item.buyingTurret1 = true;
+        }
+        if (resourceVault.items[0] >= 50f)
+        {
+
+        }
+    }
+
+    #endregion
+
+    #region Resources
 
     public void BuySawMill(int Price)
     {
-        TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
-
-        foreach (TreeGridScript item in myItems)
+        if (resourceVault.items[0] >= 50f)
         {
-            item.buySawMill = true;
+            TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
+
+            foreach (TreeGridScript item in myItems)
+            {
+                item.buySawMill = true;
+            }
+
+            resourceVault.items[0] -= 50f;
         }
     }
 
     public void BuyStoneGrinder(int Price)
     {
-        StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
-
-        foreach (StoneGridScript item in myItems)
+        if(resourceVault.items[0] >= 75f && resourceVault.items[1] >= 50f)
         {
-            item.buyStoneGrinder = true;
+            StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
+
+            foreach (StoneGridScript item in myItems)
+            {
+                item.buyStoneGrinder = true;
+            }
+
+            resourceVault.items[0] -= 60f;
         }
     }
 
@@ -51,15 +109,55 @@ public class ShopScript : MonoBehaviour
         {
             item.buyIronMine = true;
         }
+        if (resourceVault.items[0] >= 50f)
+        {
+
+        }
     }
 
     public void BuyBank(int price)
     {
-        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
-
-        foreach (BasicGridScript item in myItems)
+        if (resourceVault.items[0] >= 30f && resourceVault.items[1] >= 20f)
         {
-            item.buyingBank = true;
+            BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+            foreach (BasicGridScript item in myItems)
+            {
+                item.buyingBank = true;
+            }
+
+            resourceVault.items[0] -= 15f;
+        }
+    }
+
+    #endregion
+
+    #endregion
+
+    #region Upgrades
+
+    public void TurretUpgrade(bool trueOrFalse, GameObject objToUpgrade)
+    {
+        Vector3 mousePos = Camera.main.ViewportToWorldPoint(Input.mousePosition);
+        turretUpgradeVisuals.transform.position = Camera.main.WorldToViewportPoint(mousePos);
+
+        turretUpgradeVisuals.transform.position += new Vector3(100, 0, 0);
+
+        turretUpgradeVisuals.SetActive(trueOrFalse);
+
+        if(trueOrFalse)
+        {
+            objectToUpgrade = objToUpgrade;
+        }
+    }
+
+    public void UpgradeTurretButton()
+    {
+        objectToUpgrade.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        objectToUpgrade.gameObject.transform.GetChild(3).gameObject.SetActive(true);
+        if (resourceVault.items[0] >= 50f)
+        {
+
         }
     }
 

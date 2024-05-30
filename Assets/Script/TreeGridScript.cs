@@ -31,7 +31,7 @@ public class TreeGridScript : MonoBehaviour
 
                 boughtOnThisTile = true;
 
-                gameObject.GetComponent<ResourceTower>().Upgrade();
+                UpgradeTree();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
         }
@@ -85,5 +85,10 @@ public class TreeGridScript : MonoBehaviour
         {
             gameObject.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
         }
+    }
+
+    public void UpgradeTree()
+    {
+        gameObject.GetComponent<ResourceTower>().Upgrade();
     }
 }

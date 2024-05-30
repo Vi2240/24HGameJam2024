@@ -87,7 +87,7 @@ MonoBehaviour:
   amountOfItem: 1
   produceRate: 3
   skins:
-  - {fileID: 7591308481767081169}
+  - {fileID: 8544547641373222441}
   - {fileID: 7367057955989386923}
   - {fileID: 0}
   - {fileID: 0}

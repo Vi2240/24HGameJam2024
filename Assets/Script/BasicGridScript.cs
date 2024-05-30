@@ -12,28 +12,58 @@ public class BasicGridScript : MonoBehaviour
     bool hovering;
     bool boughtOnThisTile = false;
     bool isTouchingbase = false;
+    bool bankIsBough = false;
+    bool turretIsBought = false;
 
-    float DecorationRandomFalse1 = 0f;
-    float DecorationRandomFalse2 = 90f;
-    float DecorationRandomTrue = 101f;
+    #region Decorations
+
+    float DecorationRandom1 = 0f;
+    float DecorationRandom2 = 90f;
+    float DecorationRandom3 = 93f;
+    float DecorationRandom4 = 98f;
+    float DecorationRandom5 = 101f;
+
+    #endregion
+
+    ShopScript shopScript;
 
     private void Start()
     {
+        #region Details
+
         float Number = Random.Range(0, 101);
-        if (Number >= DecorationRandomFalse1 && Number < DecorationRandomFalse2)
+        if (Number >= DecorationRandom1 && Number < DecorationRandom2)
         {
             if (gameObject.transform.GetChild(1) != null)
             {
                 gameObject.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        if (Number >= DecorationRandomFalse2 && Number < DecorationRandomTrue)
+        if (Number >= DecorationRandom2 && Number < DecorationRandom3)
         {
            if (gameObject.transform.GetChild(1) != null)
            {
-                gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.SetActive(true);
+           }
+        }
+        if (Number >= DecorationRandom3 && Number < DecorationRandom4)
+        {
+            if (gameObject.transform.GetChild(1) != null)
+            {
+                gameObject.transform.GetChild(1).gameObject.transform.GetChild(1).gameObject.SetActive(true);
             }
         }
+        if (Number >= DecorationRandom4 && Number < DecorationRandom5)
+        {
+            if (gameObject.transform.GetChild(1) != null)
+            {
+                gameObject.transform.GetChild(1).gameObject.transform.GetChild(2).gameObject.SetActive(true);
+            }
+        }
+
+        #endregion
+
+        shopScript = FindObjectOfType<ShopScript>();
     }
 
     private void OnMouseOver()
@@ -80,7 +110,32 @@ public class BasicGridScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            if(buyingTurret1 && hovering && !boughtOnThisTile && !isTouchingbase)
+            if(hovering && boughtOnThisTile && !isTouchingbase)
+            {
+                if(bankIsBough)
+                {
+
+                }
+
+                if (turretIsBought)
+                {
+                    bool yes = true;
+
+                    shopScript.TurretUpgrade(yes, gameObject);
+                }
+            }
+
+            if(!boughtOnThisTile && !isTouchingbase && hovering)
+            {
+                if (!turretIsBought)
+                {
+                    StartCoroutine(TestRoutine());
+                }
+            }
+
+            #region Buy
+
+            if (buyingTurret1 && hovering && !boughtOnThisTile && !isTouchingbase)
             {
                 BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
@@ -90,6 +145,7 @@ public class BasicGridScript : MonoBehaviour
                 }
 
                 boughtOnThisTile = true;
+                turretIsBought = true;
 
                 transform.GetChild(0).gameObject.SetActive(true);
             }
@@ -103,11 +159,14 @@ public class BasicGridScript : MonoBehaviour
                     item.buyingBank = false;
                 }
 
+                bankIsBough = true;
                 boughtOnThisTile = true;
 
                 gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(2).gameObject.SetActive(true);
             }
+
+            #endregion
         }
 
         if (Input.GetMouseButtonDown(2))
@@ -149,5 +208,16 @@ public class BasicGridScript : MonoBehaviour
         {
             isTouchingbase = true;
         }
+    }
+
+    IEnumerator TestRoutine()
+    {
+
+
+        yield return new WaitForSeconds(0.1f);
+
+        bool no = false;
+
+        shopScript.TurretUpgrade(no, gameObject);
     }
 }

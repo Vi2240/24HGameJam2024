@@ -6,7 +6,7 @@ using TMPro;
 public class ResourceVault : MonoBehaviour
 {
     [Header("ItemID \n Money = 0 \n Wood = 1 \n Stone = 2 \n Iron = 3")]
-    [SerializeField] float[] items;
+    public float[] items;
 
     [Header("Text \n Money = 0 \n Wood = 1 \n Stone = 2 \n Iron = 3")]
     [SerializeField] TextMeshProUGUI[] text;
