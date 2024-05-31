@@ -15,10 +15,10 @@ TagManager:
   - UI
   - MiniMapObjects
   - Map
-  - TurretIgnoreCollider
-  - 
-  - 
-  - 
+  - NorthCollider
+  - SouthCollider
+  - EastCollider
+  - WestCollider
   - 
   - 
   - 
