@@ -13,45 +13,45 @@ public class EnemyScript : MonoBehaviour
 
     [Header("Detection")]
     [SerializeField] float detectionSphereSize;
-    [SerializeField] Vector3 detectionSphereOffset;
     [SerializeField] LayerMask targetLayer;
+    Vector3 detectionSphereOffset;
 
     [Header("Attacking")]
     [SerializeField]  EnemyAttackingValues attackingEnemy;
 
-    List<GameObject> buildungTargets;
+    List<GameObject> buildingTargets;
 
     Coroutine currentCoroutine = null;
 
     void Update()
     {
-        buildungTargets = GameObject.FindGameObjectsWithTag("Building").ToList();
-        if (buildungTargets.Count > 0)
+        buildingTargets = GameObject.FindGameObjectsWithTag("Building").ToList();
+        if (buildingTargets.Count > 0)
         {
             EnemyMovement();
         }
         
-        GameObject closestTargets = GetClosestTarget(buildungTargets);
+        GameObject closestTargets = GetClosestTarget(buildingTargets);
         if (closestTargets != null)
         {
             var buildingCollider = Physics2D.OverlapCircle(transform.position + detectionSphereOffset, detectionSphereSize, targetLayer);
 
             if (buildingCollider != null && currentCoroutine == null)
             {
-                currentCoroutine = StartCoroutine(AttackingTowerRoutine(buildingCollider.gameObject));
+                currentCoroutine = StartCoroutine(AttackingBuildingRoutine(buildingCollider.gameObject));
             }
         }
     }
     
     void EnemyMovement()
     {
-        GameObject closestTarget = GetClosestTarget(buildungTargets);
+        GameObject closestTarget = GetClosestTarget(buildingTargets);
         if (closestTarget != null)
         {
             Vector2 targetPosition = closestTarget.transform.position;
             transform.position = Vector2.MoveTowards(transform.position, targetPosition, enemySpeed * Time.deltaTime);
             Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-            transform.up = direction;
+            transform.right = direction;
         }
     }
 
@@ -82,13 +82,24 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
-    IEnumerator AttackingTowerRoutine(GameObject tower)
+    IEnumerator AttackingBuildingRoutine(GameObject building)
     {
-        SingleHittingTower turretHealth = tower.GetComponent<SingleHittingTower>();
+        SingleHittingTower turretHealth = building.GetComponent<SingleHittingTower>();
         if (turretHealth != null)
         {
-            Debug.Log("I am attacking");
             turretHealth.TurretTakeDamage(attackingEnemy.damage);
+        }
+
+        RaycastTower mortarHealth = building.GetComponent<RaycastTower>();
+        if (mortarHealth != null)
+        {
+            mortarHealth.MortarTakeDamage(attackingEnemy.damage);
+        }
+
+        MultiHittingTower teslaCoilHelth = building.GetComponent<MultiHittingTower>();
+        if (teslaCoilHelth != null)
+        {
+            teslaCoilHelth.TeslaCoilTakeDamage(attackingEnemy.damage);
         }
 
         yield return new WaitForSeconds(attackingEnemy.damageRate);

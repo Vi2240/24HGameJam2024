@@ -16,4 +16,4 @@ MonoBehaviour:
   hitEffect: {fileID: 0}
   damage: 1
   range: 1
-  damageRate: 0.5
+  damageRate: 0.3

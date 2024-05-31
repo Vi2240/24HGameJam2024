@@ -59,7 +59,6 @@ public class SingleHittingTower : MonoBehaviour
         EnemyScript enemyHealth = enemy.GetComponent<EnemyScript>();
         if (enemyHealth != null)
         {
-            Debug.Log("I am attacking enemy");
             enemyHealth.EnemyTakeDamage(shootingTowerObj.damage);
 
             if (shootingTowerObj.attackSoundEffect != null)

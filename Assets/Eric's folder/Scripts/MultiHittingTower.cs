@@ -7,6 +7,8 @@ public class MultiHittingTower : MonoBehaviour
 {
     [SerializeField] ShootingTowerValues shootingTowerObj;
 
+    [SerializeField] float maxHealth = 10f;
+
     List<GameObject> enemies;
 
     [SerializeField] int lockOnLimit = 3;
@@ -71,5 +73,14 @@ public class MultiHittingTower : MonoBehaviour
         }
 
         amountOfEnemiesInList--;
+    }
+
+    public void TeslaCoilTakeDamage(int damageToTake)
+    {
+        maxHealth -= damageToTake;
+        if (maxHealth <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
