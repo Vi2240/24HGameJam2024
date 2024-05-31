@@ -8,7 +8,9 @@ public class ResourceTower : MonoBehaviour
     [SerializeField] int itemID;
 
     [Header("ResourceGathering")]
+    [Header("1")]
     [SerializeField] float amountOfItem;
+    [Header("2 \n 3 \n 5 \n 10")]
     [SerializeField] float produceRate;
 
     bool timeToGive;
@@ -17,7 +19,7 @@ public class ResourceTower : MonoBehaviour
 
     [Header("LvlsThings")]
     [SerializeField] GameObject[] skins;
-    [SerializeField] float[] modifyPercentForUpgradeToAdd;
+    [SerializeField] float[] modifyPercentForUpgrade;
 
     int lvl;
 
@@ -32,7 +34,7 @@ public class ResourceTower : MonoBehaviour
     {
         if(timeToGive == true)
         {
-            resourceVault.ModifyItemByID(itemID, amountOfItem + (amountOfItem * modifyPercentForUpgradeToAdd[lvl]));
+            resourceVault.ModifyItemByID(itemID, amountOfItem * modifyPercentForUpgrade[lvl]);
 
             StartCoroutine(ProduceRate());
         }
