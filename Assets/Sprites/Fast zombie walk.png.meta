@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7174b340044fd545a4f69e7c714de2b
+guid: da4119c051eea2b468420b91a35f7ffb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Big zombie- attack animation_0
+      name: Fast zombie walk_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 65
-        width: 20
-        height: 26
+        x: 1
+        y: 0
+        width: 27
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80c1578e91e0c5741a6404647c9f2303
-      internalID: -662005461
+      spriteID: 78ab8ebc7eb70c54197df1bd8e4bcb3e
+      internalID: -1062740975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_1
+      name: Fast zombie walk_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 65
-        width: 20
-        height: 26
+        x: 34
+        y: 0
+        width: 25
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 630714a3fb23d234c8ba5d460385e3b2
-      internalID: 1659996861
+      spriteID: a0bebe314d63ed1409965316874f3aa7
+      internalID: -1807923442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_2
+      name: Fast zombie walk_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 33
-        width: 18
-        height: 27
+        x: 67
+        y: 0
+        width: 24
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c181a1bc607834e8d234b90906e003
-      internalID: -254214594
+      spriteID: 53df2bf5c48fbba468105429933f4ce7
+      internalID: -1212691606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_3
+      name: Fast zombie walk_3
       rect:
         serializedVersion: 2
-        x: 38
-        y: 33
-        width: 20
-        height: 26
+        x: 100
+        y: 0
+        width: 23
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67df036ddf5f6b4da9dd04e96964b8e
-      internalID: -1522037905
+      spriteID: d483f8524c46de34d94e2e49fa4866b6
+      internalID: 892739435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_4
+      name: Fast zombie walk_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1
-        width: 20
-        height: 26
+        x: 129
+        y: 0
+        width: 27
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf12b0cb14557a94eaf40308b18559b0
-      internalID: -1547637965
+      spriteID: 3507a2cd3a7fffe42923156fb2544e27
+      internalID: 1518704053
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_5
+      name: Fast zombie walk_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1
-        width: 20
-        height: 26
+        x: 165
+        y: 0
+        width: 23
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d5a45b47970a784ebc72f28a14c769a
-      internalID: 987640860
+      spriteID: 15c7ef8a32d1f714082c4c9bdd8b3a09
+      internalID: 476314163
       vertices: []
       indices: 
       edges: []
@@ -246,12 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Big zombie- attack animation_0: -662005461
-      Big zombie- attack animation_1: 1659996861
-      Big zombie- attack animation_2: -254214594
-      Big zombie- attack animation_3: -1522037905
-      Big zombie- attack animation_4: -1547637965
-      Big zombie- attack animation_5: 987640860
+      Fast zombie walk_0: -1062740975
+      Fast zombie walk_1: -1807923442
+      Fast zombie walk_2: -1212691606
+      Fast zombie walk_3: 892739435
+      Fast zombie walk_4: 1518704053
+      Fast zombie walk_5: 476314163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

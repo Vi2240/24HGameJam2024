@@ -13,25 +13,26 @@ public class RaycastTower : MonoBehaviour
     List<GameObject> enemies;
     Coroutine currentCoroutine;
 
-    //void Update()
-    //{
-    //    GameObject closestEnemy = FindClosestEnemy();
+    void Update()
+    {
+        GameObject closestEnemy = FindClosestEnemy();
 
-    //    if (closestEnemy != null)
-    //    {
-    //        Vector2 direction = closestEnemy.transform.position - transform.position;
-    //        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, shootingTowerObj.range);
+        if (closestEnemy != null)
+        {
+            Vector2 direction = closestEnemy.transform.position - transform.position;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, shootingTowerObj.range);
 
-    //        if (hit.collider != null)
-    //        {
-    //            var tryEnemy = hit.collider.gameObject.GetComponent<EnemyHealth>();
-    //            if (tryEnemy != null && currentCoroutine == null)
-    //            {
-    //                currentCoroutine = StartCoroutine(ShootingRoutine(tryEnemy.transform.gameObject));
-    //            }
-    //        }
-    //    }
-    //}
+            if (hit.collider != null)
+            {
+                var tryEnemy = hit.collider.gameObject.GetComponent<EnemyScript>();
+                if (tryEnemy != null && currentCoroutine == null)
+                {
+                    currentCoroutine = StartCoroutine(ShootingRoutine(tryEnemy.transform.gameObject));
+                    Debug.Log("Start coroutine");
+                }
+            }
+        }
+    }
 
     GameObject FindClosestEnemy()
     {

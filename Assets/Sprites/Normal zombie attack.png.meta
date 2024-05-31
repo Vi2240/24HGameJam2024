@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7174b340044fd545a4f69e7c714de2b
+guid: 812a94246191fc94bb6042c09fe76fa8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Big zombie- attack animation_0
+      name: Normal zombie attack_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 65
-        width: 20
-        height: 26
+        x: 0
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80c1578e91e0c5741a6404647c9f2303
-      internalID: -662005461
+      spriteID: b25deefaba659414abea20cc31a47811
+      internalID: -1984742619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_1
+      name: Normal zombie attack_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 65
-        width: 20
-        height: 26
+        x: 16
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 630714a3fb23d234c8ba5d460385e3b2
-      internalID: 1659996861
+      spriteID: 2d3c04cac9947a04b9c528537ecf7c49
+      internalID: 1559543174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_2
+      name: Normal zombie attack_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 33
-        width: 18
-        height: 27
+        x: 32
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8c181a1bc607834e8d234b90906e003
-      internalID: -254214594
+      spriteID: f0a90daaacd68e7439674b7c68497f05
+      internalID: -1079386584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_3
+      name: Normal zombie attack_3
       rect:
         serializedVersion: 2
-        x: 38
-        y: 33
-        width: 20
-        height: 26
+        x: 48
+        y: 64
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a67df036ddf5f6b4da9dd04e96964b8e
-      internalID: -1522037905
+      spriteID: 71eba779e80bdd84994cff12c57f54d8
+      internalID: 462759364
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_4
+      name: Normal zombie attack_4
       rect:
         serializedVersion: 2
-        x: 6
-        y: 1
-        width: 20
-        height: 26
+        x: 0
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf12b0cb14557a94eaf40308b18559b0
-      internalID: -1547637965
+      spriteID: 0960b64ec8bf54d4db0c855d8c5249c9
+      internalID: 504533525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Big zombie- attack animation_5
+      name: Normal zombie attack_5
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1
-        width: 20
-        height: 26
+        x: 16
+        y: 32
+        width: 16
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,8 +229,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d5a45b47970a784ebc72f28a14c769a
-      internalID: 987640860
+      spriteID: 55171a1ae98aa2c4dbc56ad0b6ad1b4e
+      internalID: -320095155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f8aa578d0841b4391378c35aebba1e
+      internalID: 15211685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d47d64ac6ca4fc4085ef575812a4d33
+      internalID: 1359552044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac9df6925216c04793923dbc4deb4bb
+      internalID: -379011966
       vertices: []
       indices: 
       edges: []
@@ -246,12 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Big zombie- attack animation_0: -662005461
-      Big zombie- attack animation_1: 1659996861
-      Big zombie- attack animation_2: -254214594
-      Big zombie- attack animation_3: -1522037905
-      Big zombie- attack animation_4: -1547637965
-      Big zombie- attack animation_5: 987640860
+      Normal zombie attack_0: -1984742619
+      Normal zombie attack_1: 1559543174
+      Normal zombie attack_2: -1079386584
+      Normal zombie attack_3: 462759364
+      Normal zombie attack_4: 504533525
+      Normal zombie attack_5: -320095155
+      Normal zombie attack_6: 15211685
+      Normal zombie attack_7: 1359552044
+      Normal zombie attack_8: -379011966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
