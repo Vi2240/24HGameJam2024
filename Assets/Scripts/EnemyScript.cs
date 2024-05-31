@@ -23,7 +23,7 @@ public class EnemyScript : MonoBehaviour
 
     Coroutine currentCoroutine = null;
 
-    Animator enemyAnimator;
+    Animator enemyAnimator = null;
 
     void Start()
     {

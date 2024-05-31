@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42a03de9beb1a014cb99451898ec7848
+guid: 812a94246191fc94bb6042c09fe76fa8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,91 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal zombie walking_0
+      name: Normal zombie attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25deefaba659414abea20cc31a47811
+      internalID: -1984742619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3c04cac9947a04b9c528537ecf7c49
+      internalID: 1559543174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a90daaacd68e7439674b7c68497f05
+      internalID: -1079386584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71eba779e80bdd84994cff12c57f54d8
+      internalID: 462759364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_4
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4abc5b851aaf2854c8148fc55837ae7c
-      internalID: 1849454428
+      spriteID: 0960b64ec8bf54d4db0c855d8c5249c9
+      internalID: 504533525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal zombie walking_1
+      name: Normal zombie attack_5
       rect:
         serializedVersion: 2
         x: 16
@@ -145,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 868c9eb10b30e10418eede0f13779f61
-      internalID: -599058956
+      spriteID: 55171a1ae98aa2c4dbc56ad0b6ad1b4e
+      internalID: -320095155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal zombie walking_2
+      name: Normal zombie attack_6
       rect:
         serializedVersion: 2
         x: 32
@@ -166,14 +250,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a73559719312e7e4d88338e78769c5b8
-      internalID: -1757262366
+      spriteID: 32f8aa578d0841b4391378c35aebba1e
+      internalID: 15211685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal zombie walking_3
+      name: Normal zombie attack_7
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d47d64ac6ca4fc4085ef575812a4d33
+      internalID: 1359552044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Normal zombie attack_8
       rect:
         serializedVersion: 2
         x: 0
@@ -187,29 +292,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60981744570130d4f97cbcb53c1f718c
-      internalID: -37754717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Normal zombie walking_4
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a34b97e31bdf2a344b48a55494474fca
-      internalID: -884182018
+      spriteID: 3ac9df6925216c04793923dbc4deb4bb
+      internalID: -379011966
       vertices: []
       indices: 
       edges: []
@@ -225,11 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Normal zombie walking_0: 1849454428
-      Normal zombie walking_1: -599058956
-      Normal zombie walking_2: -1757262366
-      Normal zombie walking_3: -37754717
-      Normal zombie walking_4: -884182018
+      Normal zombie attack_0: -1984742619
+      Normal zombie attack_1: 1559543174
+      Normal zombie attack_2: -1079386584
+      Normal zombie attack_3: 462759364
+      Normal zombie attack_4: 504533525
+      Normal zombie attack_5: -320095155
+      Normal zombie attack_6: 15211685
+      Normal zombie attack_7: 1359552044
+      Normal zombie attack_8: -379011966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42a03de9beb1a014cb99451898ec7848
+guid: da4119c051eea2b468420b91a35f7ffb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,76 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Normal zombie walking_0
+      name: Fast zombie walk_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4abc5b851aaf2854c8148fc55837ae7c
-      internalID: 1849454428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Normal zombie walking_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 868c9eb10b30e10418eede0f13779f61
-      internalID: -599058956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Normal zombie walking_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a73559719312e7e4d88338e78769c5b8
-      internalID: -1757262366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Normal zombie walking_3
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
-        height: 32
+        width: 27
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60981744570130d4f97cbcb53c1f718c
-      internalID: -37754717
+      spriteID: 78ab8ebc7eb70c54197df1bd8e4bcb3e
+      internalID: -1062740975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Normal zombie walking_4
+      name: Fast zombie walk_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 34
         y: 0
-        width: 16
-        height: 32
+        width: 25
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +145,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a34b97e31bdf2a344b48a55494474fca
-      internalID: -884182018
+      spriteID: a0bebe314d63ed1409965316874f3aa7
+      internalID: -1807923442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fast zombie walk_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 0
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53df2bf5c48fbba468105429933f4ce7
+      internalID: -1212691606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fast zombie walk_3
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d483f8524c46de34d94e2e49fa4866b6
+      internalID: 892739435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fast zombie walk_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 27
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3507a2cd3a7fffe42923156fb2544e27
+      internalID: 1518704053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fast zombie walk_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c7ef8a32d1f714082c4c9bdd8b3a09
+      internalID: 476314163
       vertices: []
       indices: 
       edges: []
@@ -225,11 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Normal zombie walking_0: 1849454428
-      Normal zombie walking_1: -599058956
-      Normal zombie walking_2: -1757262366
-      Normal zombie walking_3: -37754717
-      Normal zombie walking_4: -884182018
+      Fast zombie walk_0: -1062740975
+      Fast zombie walk_1: -1807923442
+      Fast zombie walk_2: -1212691606
+      Fast zombie walk_3: 892739435
+      Fast zombie walk_4: 1518704053
+      Fast zombie walk_5: 476314163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
