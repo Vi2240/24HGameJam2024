@@ -113,20 +113,21 @@ public class GridScript : MonoBehaviour
 
     private void PlacePiece(int uppOrDown)
     {
-        if(uppOrDown == 0 && gridX == 0 || uppOrDown == 0 && gridX == 1 || uppOrDown == 0 && gridX == -1 || uppOrDown == 1 && gridX == 0 || uppOrDown == 1 && gridX == 1 || uppOrDown == 1 && gridX == -1 || uppOrDown == -1 && gridX == 0 || uppOrDown == -1 && gridX == 1 || uppOrDown == -1 && gridX == -1)
-        {
-            if(uppOrDown == 0 && gridX == 0)
-            {
-                GameObject spawnBasePiece = Instantiate(BaseGridPiece);
+        //if(uppOrDown == 0 && gridX == 0 || uppOrDown == 0 && gridX == 1 || uppOrDown == 0 && gridX == -1 || uppOrDown == 1 && gridX == 0 || uppOrDown == 1 && gridX == 1 || uppOrDown == 1 && gridX == -1 || uppOrDown == -1 && gridX == 0 || uppOrDown == -1 && gridX == 1 || uppOrDown == -1 && gridX == -1)
+        //{
+        //    if(uppOrDown == 0 && gridX == 0)
+        //    {
+        //        GameObject spawnBasePiece = Instantiate(BaseGridPiece);
 
-                spawnBasePiece.transform.position = new Vector2(gridX, uppOrDown);
-            }
-            GameObject spawnedPiece = Instantiate(BasicGridPiece);
+        //        spawnBasePiece.transform.position = new Vector2(gridX, uppOrDown);
+        //    }
+        //    GameObject spawnedPiece = Instantiate(BasicGridPiece);
 
-            spawnedPiece.transform.position =  new Vector2(gridX, uppOrDown);
-        }
-        else
-        {
+        //    spawnedPiece.transform.position =  new Vector2(gridX, uppOrDown);
+        //}
+        //else
+        //{
+        //}
             float Number = Random.Range(0, 101);
             if (Number >= randomNumberBasic1 && Number < randomNumberBasic2)
             {
@@ -155,6 +156,5 @@ public class GridScript : MonoBehaviour
 
                 spawnedPiece.transform.position = new Vector2(gridX, uppOrDown);
             }
-        }
     }
 }

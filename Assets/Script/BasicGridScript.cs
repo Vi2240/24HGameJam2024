@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class BasicGridScript : MonoBehaviour
+public class BasicGridScript : BuildingHealthScript
 {
     public bool buyingTurret1 = false;
     public bool buyingTeslaTUrret = false;

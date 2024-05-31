@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5445197734008677983}
   - component: {fileID: 7674902952750393648}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7319781986943856444}
   - component: {fileID: 2091344552857435625}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Apocalypse House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 522582882143944}
   - component: {fileID: 4839217489893781529}
   - component: {fileID: 5273295646340407037}
-  m_Layer: 3
+  m_Layer: 12
   m_Name: BaseTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

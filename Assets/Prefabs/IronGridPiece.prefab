@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332222796217556357}
   - component: {fileID: 1770283129069375146}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: IronMineV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca77e4dc50818d419133fc43d10fa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buyIronMine: 0
+  maxHealth: 100
+  boughtIronMine: 0
+  howManyUpgrade: 0
 --- !u!114 &1728235233843706007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8482110148324386304}
   - component: {fileID: 9103926813685869341}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: IronMineV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4600923989642616768}
   - component: {fileID: 3275042349166515685}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: IronMineV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

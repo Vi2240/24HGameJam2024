@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeGridScript : MonoBehaviour
+public class TreeGridScript : BuildingHealthScript
 {
 
     public bool boughtSawMill = false;

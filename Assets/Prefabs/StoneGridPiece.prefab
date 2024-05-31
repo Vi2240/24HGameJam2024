@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2865405110070744657}
   - component: {fileID: 3610584910515674094}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneDrillV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8885205906480255587}
   - component: {fileID: 2122236762198343540}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneDrillV1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598520117273240046}
   - component: {fileID: 8257143989243902670}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StoneDrillV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

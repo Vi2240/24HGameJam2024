@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IronScript : MonoBehaviour
+public class IronScript : BuildingHealthScript
 {
     public bool boughtIronMine = false;
 
@@ -12,6 +12,7 @@ public class IronScript : MonoBehaviour
     public int howManyUpgrade = 0;
 
     ShopScript shopScript;
+
     void Start()
     {
         boughtIronMine = false;
