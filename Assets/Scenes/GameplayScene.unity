@@ -2585,8 +2585,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1430977934}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: BuyBank
-        m_Mode: 3
+        m_MethodName: BuyMortal
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4620,8 +4620,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1430977934}
         m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
-        m_MethodName: BuyBank
-        m_Mode: 3
+        m_MethodName: BuyTeslaTower
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -6,7 +6,9 @@ using UnityEngine;
 public class BasicGridScript : MonoBehaviour
 {
     public bool buyingTurret1 = false;
+    public bool buyingTeslaTUrret = false;
     public bool buyingBank = false;
+    public bool buyMortar = false;
     
 
     bool hovering;
@@ -75,7 +77,7 @@ public class BasicGridScript : MonoBehaviour
     private void OnMouseOver()
     {
         hovering = true;
-        if (buyingTurret1 || buyingBank)
+        if (buyingTurret1 || buyingBank || buyMortar || buyingTeslaTUrret)
         {
             if (!boughtOnThisTile && !isTouchingbase && buyingTurret1)
             {
@@ -84,6 +86,14 @@ public class BasicGridScript : MonoBehaviour
             if (!boughtOnThisTile && !isTouchingbase && buyingBank)
             {
                 transform.GetChild(2).gameObject.SetActive(true);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyingTeslaTUrret)
+            {
+                transform.GetChild(5).gameObject.SetActive(true);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyMortar)
+            {
+                transform.GetChild(6).gameObject.SetActive(true);
             }
         }
         else
@@ -95,7 +105,7 @@ public class BasicGridScript : MonoBehaviour
     private void OnMouseExit()
     {
         hovering = false;
-        if (buyingTurret1 || buyingBank)
+        if (buyingTurret1 || buyingBank || buyMortar || buyingTeslaTUrret)
         {
             if(!boughtOnThisTile && !isTouchingbase && buyingTurret1)
             {
@@ -104,6 +114,14 @@ public class BasicGridScript : MonoBehaviour
             if (!boughtOnThisTile && !isTouchingbase && buyingBank)
             {
                 transform.GetChild(2).gameObject.SetActive(false);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyingTeslaTUrret)
+            {
+                transform.GetChild(5).gameObject.SetActive(false);
+            }
+            if (!boughtOnThisTile && !isTouchingbase && buyMortar)
+            {
+                transform.GetChild(6).gameObject.SetActive(false);
             }
         }
         else
@@ -181,6 +199,39 @@ public class BasicGridScript : MonoBehaviour
                 transform.GetChild(1).gameObject.SetActive(false);
             }
 
+            if (buyingTeslaTUrret && hovering && !boughtOnThisTile && !isTouchingbase)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyingTeslaTUrret = false;
+                }
+
+                buyingTeslaTUrret = true;
+                boughtOnThisTile = true;
+
+                
+                transform.GetChild(5).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+            if (buyMortar && hovering && !boughtOnThisTile && !isTouchingbase)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyMortar = false;
+                }
+
+                buyMortar = true;
+                boughtOnThisTile = true;
+
+
+                transform.GetChild(6).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(false);
+            }
             #endregion
         }
 
@@ -203,6 +254,16 @@ public class BasicGridScript : MonoBehaviour
                 foreach (BasicGridScript item in myItems)
                 {
                     item.buyingBank = false;
+                }
+            }
+
+            if (buyingTeslaTUrret && !isTouchingbase)
+            {
+                BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
+
+                foreach (BasicGridScript item in myItems)
+                {
+                    item.buyingTeslaTUrret = false;
                 }
             }
         }

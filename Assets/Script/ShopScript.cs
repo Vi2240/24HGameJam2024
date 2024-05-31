@@ -62,7 +62,7 @@ public class ShopScript : MonoBehaviour
 
             foreach (BasicGridScript item in myItems)
             {
-                item.buyingTurret1 = true;
+                item.buyingTeslaTUrret = true;
             }
 
             resourceVault.items[0] -= 125f;
@@ -79,7 +79,7 @@ public class ShopScript : MonoBehaviour
 
             foreach (BasicGridScript item in myItems)
             {
-                item.buyingTurret1 = true;
+                item.buyMortar = true;
             }
 
             resourceVault.items[0] -= 150f;

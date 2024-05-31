@@ -943,8 +943,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buyingTurret1: 0
+  teslaTUrret: 0
   buyingBank: 0
-  upgradeBought: 0
+  turretUpgradeIsBought: 0
+  bankUpgradeIsBought: 0
 --- !u!50 &3283422102564252908
 Rigidbody2D:
   serializedVersion: 4
