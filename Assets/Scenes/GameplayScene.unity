@@ -140,10 +140,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1430977934}
-    - target: {fileID: 833429300151760551, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeSawMillButton
-      objectReference: {fileID: 0}
     - target: {fileID: 903096449511641848, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -168,18 +164,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1430977934}
-    - target: {fileID: 5986581859145907636, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeIronMineButton
-      objectReference: {fileID: 0}
     - target: {fileID: 8627305443669709828, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1430977934}
-    - target: {fileID: 8627305443669709828, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpgradeIronMineButton
-      objectReference: {fileID: 0}
     - target: {fileID: 9180039142749954255, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -877,6 +865,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232160480}
   m_CullTransparentMesh: 1
+--- !u!114 &273061589 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6412322639210983343, guid: 5f5f8ff111c82d94c9666389681a25d2, type: 3}
+  m_PrefabInstance: {fileID: 23786247}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &301778844
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2934,7 @@ MonoBehaviour:
   basicEnemy: {fileID: 1065004649}
   fastEnemy: {fileID: 1920316915}
   heavyEnemy: {fileID: 301778844}
+  nextWaveText: {fileID: 273061589}
   minClamp: {x: -50, y: -49}
   maxClamp: {x: 50, y: 49}
 --- !u!1 &972356660

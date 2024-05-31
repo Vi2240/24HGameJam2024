@@ -26,6 +26,8 @@ public class ShopScript : MonoBehaviour
 
     #endregion
 
+    int whatVersionToUpgrade;
+
     private void Start()
     {
         resourceVault = FindObjectOfType<ResourceVault>();
@@ -93,14 +95,14 @@ public class ShopScript : MonoBehaviour
 
     public void BuySawMill()
     {
+        if (resourceVault.items[0] >= 50f)
+        {
             TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
 
             foreach (TreeGridScript item in myItems)
             {
                 item.boughtSawMill = true;
             }
-        if (resourceVault.items[0] >= 50f)
-        {
 
             resourceVault.items[0] -= 50f;
         }
@@ -108,14 +110,14 @@ public class ShopScript : MonoBehaviour
 
     public void BuyStoneGrinder()
     {
+        if(resourceVault.items[0] >= 75f && resourceVault.items[1] >= 50f)
+        {
             StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
 
             foreach (StoneGridScript item in myItems)
             {
                 item.boughtStoneGrinder = true;
             }
-        if(resourceVault.items[0] >= 75f && resourceVault.items[1] >= 50f)
-        {
 
             resourceVault.items[0] -= 75f;
             resourceVault.items[1] -= 50f;
@@ -124,14 +126,14 @@ public class ShopScript : MonoBehaviour
 
     public void BuyIronMine()
     {
+        if (resourceVault.items[0] >= 100f && resourceVault.items[1] >= 60f && resourceVault.items[2] >= 30f)
+        {
             IronScript[] myItems = FindObjectsOfType(typeof(IronScript)) as IronScript[];
 
             foreach (IronScript item in myItems)
             {
                 item.boughtIronMine = true;
             }
-        if (resourceVault.items[0] >= 100f && resourceVault.items[1] >= 60f && resourceVault.items[2] >= 30f)
-        {
 
             resourceVault.items[0] -= 100f;
             resourceVault.items[1] -= 60f;
@@ -141,14 +143,14 @@ public class ShopScript : MonoBehaviour
 
     public void BuyBank()
     {
+        if (resourceVault.items[0] >= 30f && resourceVault.items[1] >= 20f)
+        {
             BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
             foreach (BasicGridScript item in myItems)
             {
                 item.buyingBank = true;
             }
-        if (resourceVault.items[0] >= 30f && resourceVault.items[1] >= 20f)
-        {
 
             resourceVault.items[0] -= 15f;
         }
@@ -180,13 +182,15 @@ public class ShopScript : MonoBehaviour
 
     public void UpgradeTurretButton()
     {
-        objectToUpgrade.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-        objectToUpgrade.gameObject.transform.GetChild(3).gameObject.SetActive(true);
-
-        objectToUpgrade.gameObject.transform.GetComponent<BasicGridScript>().turretUpgradeIsBought = true;
-        if (resourceVault.items[0] >= 50f)
+        if (resourceVault.items[0] >= 75f && resourceVault.items[1] >= 40)
         {
+            objectToUpgrade.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+            objectToUpgrade.gameObject.transform.GetChild(3).gameObject.SetActive(true);
 
+            objectToUpgrade.gameObject.transform.GetComponent<BasicGridScript>().turretUpgradeIsBought = true;
+
+            resourceVault.items[0] -= 75f;
+            resourceVault.items[1] -= 40f;
         }
     }
 
@@ -212,12 +216,15 @@ public class ShopScript : MonoBehaviour
 
     public void UpgradeBankButton()
     {
-        objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
-
-        objectToUpgrade.gameObject.GetComponent<BasicGridScript>().bankUpgradeIsBought = true;
-        if (resourceVault.items[0] >= 50f)
+        if (resourceVault.items[0] >= 50f && resourceVault.items[1] >= 35f && resourceVault.items[2] >= 10f)
         {
+            objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
 
+            objectToUpgrade.gameObject.GetComponent<BasicGridScript>().bankUpgradeIsBought = true;
+
+            resourceVault.items[0] -= 50;
+            resourceVault.items[1] -= 35;
+            resourceVault.items[2] -= 10;
         }
     }
 
@@ -228,7 +235,9 @@ public class ShopScript : MonoBehaviour
     public void UpgradeStoneGrinder(GameObject objToUpgrade, bool tureorFalse, int whatVersion)
     {
         Vector3 mousePos = Camera.main.ViewportToWorldPoint(Input.mousePosition);
-        if(whatVersion == 0)
+        whatVersionToUpgrade = whatVersion;
+
+        if(whatVersionToUpgrade == 0)
         {
             VisualsObject = stoneMineV2Visuals;
 
@@ -239,7 +248,7 @@ public class ShopScript : MonoBehaviour
             VisualsObject.SetActive(tureorFalse);
         }
 
-        if(whatVersion == 1)
+        if(whatVersionToUpgrade == 1)
         {
             VisualsObject = stoneMineV3Visuals;
 
@@ -250,7 +259,7 @@ public class ShopScript : MonoBehaviour
             VisualsObject.SetActive(tureorFalse);
         }
 
-        if(whatVersion == 2)
+        if(whatVersionToUpgrade == 2)
         {
 
             stoneMineV2Visuals.SetActive(tureorFalse);
@@ -269,9 +278,31 @@ public class ShopScript : MonoBehaviour
         objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
 
         objectToUpgrade.gameObject.GetComponent<StoneGridScript>().howManyUpgrade++;
-        if (resourceVault.items[0] >= 50f)
-        {
 
+
+        if (whatVersionToUpgrade == 0)
+        {
+            if (resourceVault.items[0] >= 100f && resourceVault.items[1] >= 35 && resourceVault.items[2] >= 10)
+            {
+
+
+                resourceVault.items[0] -= 100;
+                resourceVault.items[1] -= 35;
+                resourceVault.items[2] -= 10;
+            }
+        }
+
+        if (whatVersionToUpgrade == 1)
+        {
+            if (resourceVault.items[0] >= 150f && resourceVault.items[1] >= 50 && resourceVault.items[2] >= 25 && resourceVault.items[3] >= 5)
+            {
+
+
+                resourceVault.items[0] -= 150;
+                resourceVault.items[1] -= 50f;
+                resourceVault.items[2] -= 25;
+                resourceVault.items[0] -= 5;
+            }
         }
     }
 
@@ -282,7 +313,10 @@ public class ShopScript : MonoBehaviour
     public void UpgradeIronMine(GameObject objToUpgrade, bool tureorFalse, int whatVersion)
     {
         Vector3 mousePos = Camera.main.ViewportToWorldPoint(Input.mousePosition);
-        if (whatVersion == 0)
+
+        whatVersionToUpgrade = whatVersion;
+
+        if (whatVersionToUpgrade == 0)
         {
             VisualsObject = ironMineV2Visuals;
 
@@ -293,7 +327,7 @@ public class ShopScript : MonoBehaviour
             VisualsObject.SetActive(tureorFalse);
         }
 
-        if (whatVersion == 1)
+        if (whatVersionToUpgrade == 1)
         {
             VisualsObject = ironMineV3Visuals;
 
@@ -304,7 +338,7 @@ public class ShopScript : MonoBehaviour
             VisualsObject.SetActive(tureorFalse);
         }
 
-        if (whatVersion == 2)
+        if (whatVersionToUpgrade == 2)
         {
 
             ironMineV2Visuals.SetActive(tureorFalse);
@@ -320,18 +354,41 @@ public class ShopScript : MonoBehaviour
 
     public void UpgradeIronMineButton()
     {
-        objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
 
-        objectToUpgrade.gameObject.GetComponent<IronScript>().howManyUpgrade++;
-        if (resourceVault.items[0] >= 50f)
+        if (whatVersionToUpgrade == 0)
         {
+            if (resourceVault.items[0] >= 150f && resourceVault.items[1] >= 75 && resourceVault.items[2] >= 30 && resourceVault.items[3] >= 15)
+            {
+                objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
 
+                objectToUpgrade.gameObject.GetComponent<IronScript>().howManyUpgrade++;
+
+                resourceVault.items[0] -= 150;
+                resourceVault.items[1] -= 75;
+                resourceVault.items[2] -= 30;
+                resourceVault.items[3] -= 15;
+            }
+        }
+
+        if(whatVersionToUpgrade == 1)
+        {
+            if (resourceVault.items[0] >= 200f && resourceVault.items[1] >= 100 && resourceVault.items[2] >= 50 && resourceVault.items[3] >= 25)
+            {
+                objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
+
+                objectToUpgrade.gameObject.GetComponent<IronScript>().howManyUpgrade++;
+
+                resourceVault.items[0] -= 200f;
+                resourceVault.items[1] -= 100f;
+                resourceVault.items[2] -= 50;
+                resourceVault.items[0] -= 25;
+            }
         }
     }
 
     #endregion
 
-    #region Tree Upgrades
+    #region SawMill Upgrades
 
     public void UpgradeSawMill(GameObject objToUpgrade, bool tureorFalse, int whatVersion)
     {
@@ -374,12 +431,15 @@ public class ShopScript : MonoBehaviour
 
     public void UpgradeSawMillButton()
     {
-        objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
-
-        objectToUpgrade.gameObject.GetComponent<TreeGridScript>().howManyUpgrade++;
-        if (resourceVault.items[0] >= 50f)
+        if (resourceVault.items[0] >= 75f && resourceVault.items[1] >= 40)
         {
 
+            objectToUpgrade.gameObject.GetComponent<ResourceTower>().Upgrade();
+
+            objectToUpgrade.gameObject.GetComponent<TreeGridScript>().howManyUpgrade++;
+
+            resourceVault.items[1] -= 40;
+            resourceVault.items[0] -= 75;
         }
     }
 

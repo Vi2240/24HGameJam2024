@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using TMPro;
+using UnityEngine.UI;
 
 public class EnemyWaveScript : MonoBehaviour
 {
     [SerializeField] GameObject basicEnemy;
     [SerializeField] GameObject fastEnemy;
     [SerializeField] GameObject heavyEnemy;
+
+    [SerializeField] TextMeshProUGUI nextWaveText;
 
     float randomChance1 = 0f;
     float randomChance2 = 101f;
@@ -31,6 +35,10 @@ public class EnemyWaveScript : MonoBehaviour
 
     private void Update()
     {
+        nextWaveText.text = timeUntilNewWave.ToString("00.00");
+
+        timeUntilNewWave -= Time.deltaTime;
+
         if (startNewWave)
         {
             StartCoroutine(TimUntilNewWaveRoutine());
@@ -83,6 +91,8 @@ public class EnemyWaveScript : MonoBehaviour
         startNewWave = false;
 
         yield return new WaitForSeconds(timeUntilNewWave);
+
+        timeUntilNewWave = 60;
 
         startNewWave = true;
     }
