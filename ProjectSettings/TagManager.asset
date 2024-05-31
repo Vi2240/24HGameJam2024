@@ -17,10 +17,10 @@ TagManager:
   - UI
   - MiniMapObjects
   - Map
-  - Target
-  - 
-  - 
-  - 
+  - NorthCollider
+  - SouthCollider
+  - EastCollider
+  - WestCollider
   - 
   - 
   - 
