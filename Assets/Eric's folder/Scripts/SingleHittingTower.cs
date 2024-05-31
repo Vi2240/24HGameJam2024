@@ -4,14 +4,12 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class SingleHittingTower : MonoBehaviour
+public class SingleHittingTower : BuildingHealthScript
 {
     [SerializeField] ShootingTowerValues shootingTowerObj;
 
     [SerializeField] Vector3 detectionBoxSize;
     [SerializeField] Vector3 detectionBoxOffset;
-
-    [SerializeField] float maxHealth = 10f;
     
     List<GameObject> enemies;
     Coroutine currentCoroutine = null;
@@ -74,15 +72,6 @@ public class SingleHittingTower : MonoBehaviour
         yield return new WaitForSeconds(shootingTowerObj.fireRate);
 
         currentCoroutine = null;
-    }
-
-    public void TurretTakeDamage(int damageToTake)
-    {
-        maxHealth -= damageToTake;
-        if (maxHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void OnDrawGizmosSelected()

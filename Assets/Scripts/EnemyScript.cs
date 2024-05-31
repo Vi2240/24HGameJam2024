@@ -19,19 +19,28 @@ public class EnemyScript : MonoBehaviour
     [Header("Attacking")]
     [SerializeField]  EnemyAttackingValues attackingEnemy;
 
-    List<GameObject> buildingTargets;
+    public List<GameObject> buildingTargets;
 
     Coroutine currentCoroutine = null;
+
+    Animator enemyAnimator;
+
+    void Start()
+    {
+        enemyAnimator = GetComponent<Animator>();
+    }
 
     void Update()
     {
         buildingTargets = GameObject.FindGameObjectsWithTag("Building").ToList();
+
         if (buildingTargets.Count > 0)
         {
             EnemyMovement();
         }
         
         GameObject closestTargets = GetClosestTarget(buildingTargets);
+
         if (closestTargets != null)
         {
             var buildingCollider = Physics2D.OverlapCircle(transform.position + detectionSphereOffset, detectionSphereSize, targetLayer);
@@ -40,18 +49,51 @@ public class EnemyScript : MonoBehaviour
             {
                 currentCoroutine = StartCoroutine(AttackingBuildingRoutine(buildingCollider.gameObject));
             }
+
+            if (buildingCollider != null)
+            {
+                AttackAnimations(buildingCollider.gameObject);
+            }
+            else
+            {
+                AttackAnimations(null);
+            }
+        }
+        else
+        {
+            enemyAnimator.SetBool("IsAttacking", false);
         }
     }
     
     void EnemyMovement()
     {
-        GameObject closestTarget = GetClosestTarget(buildingTargets);
-        if (closestTarget != null)
+        if (currentCoroutine == null)
         {
-            Vector2 targetPosition = closestTarget.transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, enemySpeed * Time.deltaTime);
-            Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-            transform.right = direction;
+            GameObject closestTarget = GetClosestTarget(buildingTargets);
+            if (closestTarget != null)
+            {
+                Vector2 targetPosition = closestTarget.transform.position;
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, enemySpeed * Time.deltaTime);
+
+                if (transform.position.x > closestTarget.transform.position.x)
+                {
+                    transform.localScale = new Vector3(-1, 1, 1);
+                }
+                if (transform.position.x < closestTarget.transform.position.x)
+                {
+                    transform.localScale = new Vector3(1, 1, 1);
+                }
+                
+                enemyAnimator.SetBool("IsMoving", true);
+            }
+            else
+            {
+                enemyAnimator.SetBool("IsMoving", false);
+            }
+        }
+        else
+        {
+            enemyAnimator.SetBool("IsMoving", false);
         }
     }
 
@@ -82,24 +124,36 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    void AttackAnimations(GameObject building)
+    {
+        BuildingHealthScript buildingHealth = null;
+        if (building != null)
+        {
+          buildingHealth = building.GetComponent<BuildingHealthScript>();
+
+        }
+
+        if (buildingHealth != null)
+        {
+            
+            Debug.Log("Attacking");
+            enemyAnimator.SetBool("IsAttacking", true);
+            Debug.Log(buildingHealth);
+        }
+        else
+        {
+            Debug.Log("Not Attacking");
+            enemyAnimator.SetBool("IsAttacking", false);
+        }
+    }
+
     IEnumerator AttackingBuildingRoutine(GameObject building)
     {
-        SingleHittingTower turretHealth = building.GetComponent<SingleHittingTower>();
-        if (turretHealth != null)
-        {
-            turretHealth.TurretTakeDamage(attackingEnemy.damage);
-        }
+        BuildingHealthScript buildingHealth = building.GetComponent<BuildingHealthScript>();
 
-        RaycastTower mortarHealth = building.GetComponent<RaycastTower>();
-        if (mortarHealth != null)
+        if (buildingHealth != null)
         {
-            mortarHealth.MortarTakeDamage(attackingEnemy.damage);
-        }
-
-        MultiHittingTower teslaCoilHelth = building.GetComponent<MultiHittingTower>();
-        if (teslaCoilHelth != null)
-        {
-            teslaCoilHelth.TeslaCoilTakeDamage(attackingEnemy.damage);
+            buildingHealth.BuildingTakeDamage(attackingEnemy.damage);
         }
 
         yield return new WaitForSeconds(attackingEnemy.damageRate);
@@ -113,6 +167,7 @@ public class EnemyScript : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + detectionSphereOffset, detectionSphereSize);
     }
 }
+
 //Previous tries
 //Vector2 newPosition = Vector2.MoveTowards(transform.position, target.position, enemySpeed * Time.deltaTime);
 //transform.position = newPosition;
@@ -132,3 +187,38 @@ public class EnemyScript : MonoBehaviour
 
 //Debug.Log(closestTargets);
 //Debug.Log(buildingCollider + "  " + currentCoroutine);
+//SingleHittingTower turretHealth = building.GetComponent<SingleHittingTower>();
+
+//if (turretHealth != null)
+//{
+//    turretHealth.TurretTakeDamage(attackingEnemy.damage);
+//    enemyAnimator.SetBool("IsAttacking", true);
+//}
+//else
+//{
+//    enemyAnimator.SetBool("IsAttacking", false);
+//}
+
+//RaycastTower mortarHealth = building.GetComponent<RaycastTower>();
+
+//if (mortarHealth != null)
+//{
+//    mortarHealth.MortarTakeDamage(attackingEnemy.damage);
+//    enemyAnimator.SetBool("IsAttacking", true);
+//}
+//else
+//{
+//    enemyAnimator.SetBool("IsAttacking", false);
+//}
+
+//MultiHittingTower teslaCoilHelth = building.GetComponent<MultiHittingTower>();
+
+//if (teslaCoilHelth != null)
+//{
+//    teslaCoilHelth.TeslaCoilTakeDamage(attackingEnemy.damage);
+//    enemyAnimator.SetBool("IsAttacking", true);
+//}
+//else
+//{
+//    enemyAnimator.SetBool("IsAttacking", false);
+//}

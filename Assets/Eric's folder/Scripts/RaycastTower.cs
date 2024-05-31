@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RaycastTower : MonoBehaviour
+public class RaycastTower : BuildingHealthScript
 {
     [SerializeField] ShootingTowerValues shootingTowerObj;
-
-    [SerializeField] float maxHealth = 10f;
     
     List<GameObject> enemies;
 
@@ -69,15 +67,6 @@ public class RaycastTower : MonoBehaviour
         yield return new WaitForSeconds(shootingTowerObj.fireRate);
 
         currentCoroutine = null;
-    }
-
-    public void MortarTakeDamage(int damageToTake)
-    {
-        maxHealth -= damageToTake;
-        if (maxHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void OnDrawGizmosSelected()

@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MultiHittingTower : MonoBehaviour
+public class MultiHittingTower : BuildingHealthScript
 {
     [SerializeField] ShootingTowerValues shootingTowerObj;
-
-    [SerializeField] float maxHealth = 10f;
 
     List<GameObject> enemies;
 
@@ -73,14 +71,5 @@ public class MultiHittingTower : MonoBehaviour
         }
 
         amountOfEnemiesInList--;
-    }
-
-    public void TeslaCoilTakeDamage(int damageToTake)
-    {
-        maxHealth -= damageToTake;
-        if (maxHealth <= 0)
-        {
-            Destroy(this.gameObject);
-        }
     }
 }
