@@ -28,25 +28,25 @@ public class SingleHittingTower : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
-    void Update()
-    {
-        GameObject closestEnemy = FindClosestEnemy();
+    //void Update()
+    //{
+    //    GameObject closestEnemy = FindClosestEnemy();
 
-        if (closestEnemy != null)
-        {
-            var enemyCollider = Physics2D.OverlapCircle(transform.position, shootingTowerObj.range);
+    //    if (closestEnemy != null)
+    //    {
+    //        var enemyCollider = Physics2D.OverlapCircle(transform.position, shootingTowerObj.range);
 
-            if (enemyCollider != null && enemyCollider.transform.gameObject == closestEnemy && currentCoroutine == null)
-            {
-                currentCoroutine = StartCoroutine(ShootRoutine(closestEnemy));
-            }
-            else if (enemyCollider != null && currentCoroutine == null)
-            {
-                closestEnemy = FindClosestEnemy();
-                currentCoroutine = StartCoroutine(ShootRoutine(closestEnemy));
-            }
-        }
-    }
+    //        if (enemyCollider != null && enemyCollider.transform.gameObject == closestEnemy && currentCoroutine == null)
+    //        {
+    //            currentCoroutine = StartCoroutine(ShootRoutine(closestEnemy));
+    //        }
+    //        else if (enemyCollider != null && currentCoroutine == null)
+    //        {
+    //            closestEnemy = FindClosestEnemy();
+    //            currentCoroutine = StartCoroutine(ShootRoutine(closestEnemy));
+    //        }
+    //    }
+    //}
 
     GameObject FindClosestEnemy()
     {
@@ -69,43 +69,43 @@ public class SingleHittingTower : MonoBehaviour
         return closestEnemy;
     }
 
-    IEnumerator ShootRoutine(GameObject enemy)
-    {
-        RotateTurret(enemy);
+    //IEnumerator ShootRoutine(GameObject enemy)
+    //{
+    //    RotateTurret(enemy);
         
-        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-        if (enemyHealth != null)
-        {
-            enemyHealth.TakeDamage(shootingTowerObj.damage);
+    //    EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+    //    if (enemyHealth != null)
+    //    {
+    //        enemyHealth.TakeDamage(shootingTowerObj.damage);
 
-            if (shootingEffectUp != null && lookingUp)
-            {
-                StartCoroutine(TurnOnAndOffEffect(shootingEffectUp));
-            }
-            if (shootingEffectDown != null && lookingDown)
-            {
-                StartCoroutine(TurnOnAndOffEffect(shootingEffectDown));
-            }
-            if (shootingEffectRight != null && lookingRight)
-            {
-                StartCoroutine(TurnOnAndOffEffect(shootingEffectRight));
-            }
-            if (shootingEffectLeft != null && lookingLeft)
-            {
-                StartCoroutine(TurnOnAndOffEffect(shootingEffectLeft));
-            }
-            if (shootingTowerObj.attackSoundEffect != null)
-            {
-                AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);
-            }
+    //        if (shootingEffectUp != null && lookingUp)
+    //        {
+    //            StartCoroutine(TurnOnAndOffEffect(shootingEffectUp));
+    //        }
+    //        if (shootingEffectDown != null && lookingDown)
+    //        {
+    //            StartCoroutine(TurnOnAndOffEffect(shootingEffectDown));
+    //        }
+    //        if (shootingEffectRight != null && lookingRight)
+    //        {
+    //            StartCoroutine(TurnOnAndOffEffect(shootingEffectRight));
+    //        }
+    //        if (shootingEffectLeft != null && lookingLeft)
+    //        {
+    //            StartCoroutine(TurnOnAndOffEffect(shootingEffectLeft));
+    //        }
+    //        if (shootingTowerObj.attackSoundEffect != null)
+    //        {
+    //            AudioSource.PlayClipAtPoint(shootingTowerObj.attackSoundEffect, transform.position);
+    //        }
 
-            StartCoroutine(HitEffectDomino(enemy));
-        }
+    //        StartCoroutine(HitEffectDomino(enemy));
+    //    }
 
-        yield return new WaitForSeconds(shootingTowerObj.fireRate);
+    //    yield return new WaitForSeconds(shootingTowerObj.fireRate);
 
-        currentCoroutine = null;
-    }
+    //    currentCoroutine = null;
+    //}
 
     IEnumerator TurnOnAndOffEffect(GameObject effect)
     {
