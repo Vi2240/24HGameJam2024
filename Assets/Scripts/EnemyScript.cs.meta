@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Script/BasicGridScript.cs.meta
+guid: 54778feae8aeda04ea99493184800e86
+========
 guid: f655570713ee5c742b0957ca1a6e8a91
+>>>>>>>> 4539586e14f47de80c25d8db98c6e199e544ba7f:Assets/Scripts/EnemyScript.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

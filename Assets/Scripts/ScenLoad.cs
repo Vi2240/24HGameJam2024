@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScenLoad : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ChangeScene(int scene)
     {
-        
+        SceneManager.LoadScene(scene);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void QuitGame()
     {
-        
+        Debug.Log("Left game");
+        Application.Quit();
     }
 }

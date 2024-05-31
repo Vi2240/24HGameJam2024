@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Script/BasicGridScript.cs.meta
+guid: a72dd04ff7f0e0341b1645c089a9a1d9
+========
+guid: f655570713ee5c742b0957ca1a6e8a91
+>>>>>>>> 4539586e14f47de80c25d8db98c6e199e544ba7f:Assets/Scripts/EnemyScript.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
