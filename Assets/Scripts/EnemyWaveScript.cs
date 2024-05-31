@@ -15,17 +15,19 @@ public class EnemyWaveScript : MonoBehaviour
     float randomChance3 = 101f;
     float randomChance4 = 101f;
 
-    float timeUntilNewWave = 1f;
+    float timeUntilNewWave = 60f;
 
     bool startNewWave = true;
+    bool waveEnd = false;
+    bool gotSpawnLocation = false;
 
     int maxNumberOfEnemysOnWave = 5;
     int currentNumberOfEnemysOnWave;
 
-    private void Start()
-    {
+    public Vector2 minClamp = new Vector2(-50, -49f);
+    public Vector2 maxClamp = new Vector2(50, 49f);
+    Vector2 spawnLocation = Vector2.zero;
 
-    }
 
     private void Update()
     {
@@ -42,19 +44,19 @@ public class EnemyWaveScript : MonoBehaviour
                 {
                     GameObject spawnedObject = Instantiate(basicEnemy);
 
-                    spawnedObject.gameObject.transform.position = Vector3.zero;
+                    SpawnEnemy(spawnedObject);
                 }
                 if (Number >= randomChance2 && Number < randomChance3)
                 {
                     GameObject spawnedObject = Instantiate(fastEnemy);
 
-                    spawnedObject.gameObject.transform.position = Vector3.zero;
+                    SpawnEnemy(spawnedObject);
                 }
                 if (Number >= randomChance3 && Number < randomChance4)
                 {
                     GameObject spawnedObject = Instantiate(heavyEnemy);
 
-                    spawnedObject.gameObject.transform.position = Vector3.zero;
+                    SpawnEnemy(spawnedObject);
                 }
 
                 currentNumberOfEnemysOnWave--;
@@ -65,7 +67,9 @@ public class EnemyWaveScript : MonoBehaviour
                     randomChance2 -= 2f;
                     randomChance3--;
                     maxNumberOfEnemysOnWave++;
-                    Debug.Log(maxNumberOfEnemysOnWave);
+
+                    gotSpawnLocation = false;
+                    waveEnd = true;
 
                     break;
                 }
@@ -83,10 +87,48 @@ public class EnemyWaveScript : MonoBehaviour
         startNewWave = true;
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject spawnObject)
     {
+        if(!gotSpawnLocation)
+        {
+            float Number = Random.Range(0, 4);
 
+            if (Number == 0)
+            {
+                spawnLocation = new Vector2(Random.Range(maxClamp.x, -maxClamp.x), maxClamp.y);
 
+                spawnObject.gameObject.transform.position = spawnLocation;
 
+                gotSpawnLocation = true;
+            }
+            if (Number == 1)
+            {
+                spawnLocation = new Vector2(Random.Range(maxClamp.x, -maxClamp.x), minClamp.y);
+
+                spawnObject.gameObject.transform.position = spawnLocation;
+
+                gotSpawnLocation = true;
+            }
+            if (Number == 2)
+            {
+                spawnLocation = new Vector2(maxClamp.x, Random.Range(maxClamp.y, -maxClamp.y));
+
+                spawnObject.gameObject.transform.position = spawnLocation;
+
+                gotSpawnLocation = true;
+            }
+            if (Number == 3)
+            {
+                spawnLocation = new Vector2(-maxClamp.x, Random.Range(maxClamp.y, -maxClamp.y));
+
+                spawnObject.gameObject.transform.position = spawnLocation;
+
+                gotSpawnLocation = true;
+            }
+        }
+        else
+        {
+            spawnObject.gameObject.transform.position = spawnLocation;
+        }
     }
 }

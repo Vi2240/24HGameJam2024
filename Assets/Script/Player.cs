@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
 
     float floatCameraSpeed = 1.5f;
 
-    public Vector2 minClamp = new Vector2(-27, -36);
-    public Vector2 maxClamp = new Vector2(27, 36);
+    public Vector2 minClamp = new Vector2(-20, -31);
+    public Vector2 maxClamp = new Vector2(20, 31);
 
 
     void Update()

@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class StoneGridScript : MonoBehaviour
 {
-    public bool buyStoneGrinder = false;
+    public bool boughtStoneGrinder = false;
 
     bool hovering;
     bool boughtOnThisTile = false;
 
+    public int howManyUpgrade = 0;
+
+    ShopScript shopScript;
+
 
     void Start()
     {
-        buyStoneGrinder = false;
+        boughtStoneGrinder = false;
+
+        shopScript = FindObjectOfType<ShopScript>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (buyStoneGrinder && hovering && !boughtOnThisTile)
+            if (boughtStoneGrinder && hovering && !boughtOnThisTile)
             {
                 StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
 
                 foreach (StoneGridScript item in myItems)
                 {
-                    item.buyStoneGrinder = false;
+                    item.boughtStoneGrinder = false;
                 }
 
                 boughtOnThisTile = true;
@@ -33,31 +39,60 @@ public class StoneGridScript : MonoBehaviour
                 gameObject.GetComponent<ResourceTower>().Upgrade();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+
+            if (hovering && boughtOnThisTile)
+            {
+                if ( howManyUpgrade == 0)
+                {
+                    bool yes = true;
+  
+                    shopScript.UpgradeStoneGrinder(gameObject, yes, howManyUpgrade);
+
+                }
+
+                if (boughtOnThisTile && howManyUpgrade == 1)
+                {
+                    bool yes = true;
+
+                    shopScript.UpgradeStoneGrinder(gameObject, yes, howManyUpgrade);
+
+                }
+            }
+
+            if (!boughtOnThisTile && hovering)
+            {
+                if (!boughtStoneGrinder)
+                {
+                    StartCoroutine(DisapereDelayRoutine(2));
+                }
+            }
         }
 
         if(Input.GetMouseButtonDown(2))
         {
-            if (buyStoneGrinder)
+            if (boughtStoneGrinder)
             {
                 StoneGridScript[] myItems = FindObjectsOfType(typeof(StoneGridScript)) as StoneGridScript[];
 
                 foreach (StoneGridScript item in myItems)
                 {
-                    item.buyStoneGrinder = false;
+                    item.boughtStoneGrinder = false;
                 }
             }
         }
 
-        if (!buyStoneGrinder && !boughtOnThisTile)
+        if (!boughtStoneGrinder && !boughtOnThisTile)
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
+    #region MouseOver&Exit
+
     private void OnMouseOver()
     {
         hovering = true;
-        if (buyStoneGrinder)
+        if (boughtStoneGrinder)
         {
             if (!boughtOnThisTile)
             {
@@ -73,7 +108,7 @@ public class StoneGridScript : MonoBehaviour
     private void OnMouseExit()
     {
         hovering = false;
-        if (buyStoneGrinder)
+        if (boughtStoneGrinder)
         {
             if (!boughtOnThisTile)
             {
@@ -84,5 +119,22 @@ public class StoneGridScript : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().material.color = new Color32(255, 255, 255, 255);
         }
+    }
+
+    #endregion
+
+    public void StoneUpgrade()
+    {
+        gameObject.GetComponent<ResourceTower>().Upgrade();
+    }
+
+    IEnumerator DisapereDelayRoutine(int whatVersion)
+    {
+
+
+        yield return new WaitForSeconds(0.1f);
+
+        shopScript.DisapereVisuals();
+ 
     }
 }

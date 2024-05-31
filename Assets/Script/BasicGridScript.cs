@@ -14,7 +14,9 @@ public class BasicGridScript : MonoBehaviour
     bool isTouchingbase = false;
     bool bankIsBough = false;
     bool turretIsBought = false;
-    public bool upgradeBought = false;
+
+    public bool turretUpgradeIsBought = false;
+    public bool bankUpgradeIsBought = false;
 
     #region Decorations
 
@@ -66,7 +68,8 @@ public class BasicGridScript : MonoBehaviour
 
         shopScript = FindObjectOfType<ShopScript>();
 
-        upgradeBought = false;
+        turretUpgradeIsBought = false;
+        bankUpgradeIsBought = false;
     }
 
     private void OnMouseOver()
@@ -115,12 +118,14 @@ public class BasicGridScript : MonoBehaviour
         {
             if(hovering && boughtOnThisTile && !isTouchingbase)
             {
-                if(bankIsBough)
+                if(bankIsBough && !bankUpgradeIsBought)
                 {
+                    bool yes = true;
 
+                    shopScript.UpgradeBank(gameObject, yes);
                 }
 
-                if (turretIsBought && !upgradeBought)
+                if (turretIsBought && !turretUpgradeIsBought)
                 {
                     bool yes = true;
 
@@ -132,7 +137,12 @@ public class BasicGridScript : MonoBehaviour
             {
                 if (!turretIsBought)
                 {
-                    StartCoroutine(DisapereDelayRoutine());
+                    StartCoroutine(DisapereDelayRoutine(1));
+                }
+
+                if (!bankIsBough)
+                {
+                    StartCoroutine(DisapereDelayRoutine(2));
                 }
             }
 
@@ -215,14 +225,27 @@ public class BasicGridScript : MonoBehaviour
         }
     }
 
-    IEnumerator DisapereDelayRoutine()
+    IEnumerator DisapereDelayRoutine(int whosAsking)
     {
 
 
         yield return new WaitForSeconds(0.1f);
 
-        bool no = false;
+        shopScript.DisapereVisuals();
 
-        shopScript.TurretUpgrade(no, gameObject);
+        //bool no = false;
+        //if(whosAsking == 1)
+        //{
+        //    shopScript.TurretUpgrade(no, gameObject);
+        //}
+        //if(whosAsking == 2)
+        //{
+        //    shopScript.UpgradeBank(gameObject, no);
+        //}
+    }
+
+    public void UpgradeBank()
+    {
+        gameObject.GetComponent<ResourceTower>().Upgrade();
     }
 }

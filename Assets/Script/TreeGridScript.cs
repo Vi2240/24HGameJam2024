@@ -5,28 +5,34 @@ using UnityEngine;
 public class TreeGridScript : MonoBehaviour
 {
 
-    public bool buySawMill = false;
+    public bool boughtSawMill = false;
 
     bool hovering;
     bool boughtOnThisTile = false;
 
+    public int howManyUpgrade = 0;
+
+    ShopScript shopScript;
+
 
     void Start()
     {
-        buySawMill = false;
+        boughtSawMill = false;
+
+        shopScript = FindObjectOfType<ShopScript>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (buySawMill && hovering && !boughtOnThisTile)
+            if (boughtSawMill && hovering && !boughtOnThisTile)
             {
                 TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
 
                 foreach (TreeGridScript item in myItems)
                 {
-                    item.buySawMill = false;
+                    item.boughtSawMill = false;
                 }
 
                 boughtOnThisTile = true;
@@ -34,22 +40,41 @@ public class TreeGridScript : MonoBehaviour
                 UpgradeTree();
                 transform.GetChild(0).gameObject.SetActive(true);
             }
+
+            if (hovering && boughtOnThisTile)
+            {
+                if (howManyUpgrade == 0)
+                {
+                    bool yes = true;
+
+                    shopScript.UpgradeSawMill(gameObject, yes, howManyUpgrade);
+
+                }
+            }
+
+            if (!boughtOnThisTile && hovering)
+            {
+                if (!boughtSawMill)
+                {
+                    StartCoroutine(DisapereDelayRoutine(2));
+                }
+            }
         }
 
         if(Input.GetMouseButtonDown(2))
         {
-            if (buySawMill)
+            if (boughtSawMill)
             {
                 TreeGridScript[] myItems = FindObjectsOfType(typeof(TreeGridScript)) as TreeGridScript[];
 
                 foreach (TreeGridScript item in myItems)
                 {
-                    item.buySawMill = false;
+                    item.boughtSawMill = false;
                 }
             }
         }
 
-        if (!buySawMill && !boughtOnThisTile)
+        if (!boughtSawMill && !boughtOnThisTile)
         {
             transform.GetChild(0).gameObject.SetActive(false);
         }
@@ -58,7 +83,7 @@ public class TreeGridScript : MonoBehaviour
     private void OnMouseOver()
     {
         hovering = true;
-        if (buySawMill)
+        if (boughtSawMill)
         {
             if (!boughtOnThisTile)
             {
@@ -74,7 +99,7 @@ public class TreeGridScript : MonoBehaviour
     private void OnMouseExit()
     {
         hovering = false;
-        if (buySawMill)
+        if (boughtSawMill)
         {
             if (!boughtOnThisTile)
             {
@@ -90,5 +115,15 @@ public class TreeGridScript : MonoBehaviour
     public void UpgradeTree()
     {
         gameObject.GetComponent<ResourceTower>().Upgrade();
+    }
+
+    IEnumerator DisapereDelayRoutine(int whatVersion)
+    {
+
+
+        yield return new WaitForSeconds(0.1f);
+
+        shopScript.DisapereVisuals();
+
     }
 }
