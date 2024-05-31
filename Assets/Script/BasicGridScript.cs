@@ -30,7 +30,7 @@ public class BasicGridScript : MonoBehaviour
 
     private void Start()
     {
-        #region Details
+        #region Details Random
 
         float Number = Random.Range(0, 101);
         if (Number >= DecorationRandom1 && Number < DecorationRandom2)

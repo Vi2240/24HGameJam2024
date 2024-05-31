@@ -27,43 +27,51 @@ public class ShopScript : MonoBehaviour
 
     public void BuyTurret()
     {
-        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
-
-        foreach (BasicGridScript item in myItems)
-        {
-            item.buyingTurret1 = true;
-        }
         if (resourceVault.items[0] >= 50f)
         {
+            BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
+            foreach (BasicGridScript item in myItems)
+            {
+                item.buyingTurret1 = true;
+            }
+
+            resourceVault.items[0] -= 50f;
         }
     }
 
     public void BuyTeslaTower()
     {
-        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
-
-        foreach (BasicGridScript item in myItems)
+        if (resourceVault.items[0] >= 125f && resourceVault.items[1] >= 75f && resourceVault.items[2] >= 45)
         {
-            item.buyingTurret1 = true;
-        }
-        if (resourceVault.items[0] >= 50f)
-        {
+            BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
+            foreach (BasicGridScript item in myItems)
+            {
+                item.buyingTurret1 = true;
+            }
+
+            resourceVault.items[0] -= 125f;
+            resourceVault.items[1] -= 75f;
+            resourceVault.items[2] -= 45f;
         }
     }
 
     public void BuyMortal()
     {
-        BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
-
-        foreach (BasicGridScript item in myItems)
+        if (resourceVault.items[0] >= 150f && resourceVault.items[1] >= 80f && resourceVault.items[2] >= 60 && resourceVault.items[3] >= 40)
         {
-            item.buyingTurret1 = true;
-        }
-        if (resourceVault.items[0] >= 50f)
-        {
+            BasicGridScript[] myItems = FindObjectsOfType(typeof(BasicGridScript)) as BasicGridScript[];
 
+            foreach (BasicGridScript item in myItems)
+            {
+                item.buyingTurret1 = true;
+            }
+
+            resourceVault.items[0] -= 150f;
+            resourceVault.items[1] -= 80f;
+            resourceVault.items[2] -= 60f;
+            resourceVault.items[3] -= 40f;
         }
     }
 
@@ -97,21 +105,25 @@ public class ShopScript : MonoBehaviour
                 item.buyStoneGrinder = true;
             }
 
-            resourceVault.items[0] -= 60f;
+            resourceVault.items[0] -= 75f;
+            resourceVault.items[1] -= 50f;
         }
     }
 
     public void BuyIronMine()
     {
-        IronScript[] myItems = FindObjectsOfType(typeof(IronScript)) as IronScript[];
-
-        foreach (IronScript item in myItems)
+        if (resourceVault.items[0] >= 100f && resourceVault.items[1] >= 60f && resourceVault.items[2] >= 30f)
         {
-            item.buyIronMine = true;
-        }
-        if (resourceVault.items[0] >= 50f)
-        {
+            IronScript[] myItems = FindObjectsOfType(typeof(IronScript)) as IronScript[];
 
+            foreach (IronScript item in myItems)
+            {
+                item.buyIronMine = true;
+            }
+
+            resourceVault.items[0] -= 100f;
+            resourceVault.items[1] -= 60f;
+            resourceVault.items[2] -= 30f;
         }
     }
 
