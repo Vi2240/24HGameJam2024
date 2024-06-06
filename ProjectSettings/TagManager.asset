@@ -21,8 +21,8 @@ TagManager:
   - SouthCollider
   - EastCollider
   - WestCollider
-  - 
-  - 
+  - Tower
+  - Enemy
   - 
   - 
   - 

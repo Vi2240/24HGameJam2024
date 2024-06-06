@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Prefabs/Enemies/Regular enemy.prefab.meta
+guid: d86697796a78f644b88314375aeb0785
+========
+guid: 96f71ef91ae765c46bb32e329c1fa68d
+>>>>>>>> 17cc2d83939e275082380a0ecfe842917c86a4b1:Assets/Prefabs/BaseTile.prefab.meta
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

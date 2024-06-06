@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/BuildingHealthScript.cs.meta
+guid: b76df87c7f5acf84081f44c4aab6ff68
+========
+guid: 2efe11f395912394c997ad19a42b615f
+>>>>>>>> 17cc2d83939e275082380a0ecfe842917c86a4b1:Assets/Scripts/EnemyWaveScript.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

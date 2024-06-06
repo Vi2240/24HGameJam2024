@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb6018729adf7849ac4859e2f5c0d7a, type: 3}
+  m_Name: MiniTurret
+  m_EditorClassIdentifier: 
+  attackSoundEffect: {fileID: 8300000, guid: e2138994f8023694f946c1ae110710e2, type: 3}
+  spriteUp: {fileID: 21300000, guid: f0ca1f48a25495141a877d5a8c0a0d05, type: 3}
+  spriteDown: {fileID: 21300000, guid: 15b85e4c8e103a045ad3bd6306da4219, type: 3}
+  spriteLeft: {fileID: 21300000, guid: 4f7a1a22be16acb4c9af30a4508a891e, type: 3}
+  spriteRight: {fileID: 21300000, guid: 58a664b70a50b1749aeb145226970c5d, type: 3}
+  hitEffectUp1: {fileID: 8533695711897762368, guid: 9136c8b4ee1396946b9bd1cbc85757df, type: 3}
+  hitEffectUp2: {fileID: 2498088852861622012, guid: d82d028bfdaf2154ba61c2358241d8d2, type: 3}
+  hitEffectUp3: {fileID: 7322405936359695315, guid: 472204be1a6772b46990cde99ab1a801, type: 3}
+  hitEffectUp4: {fileID: 989739205813002350, guid: 49f41b2c912ca5a4aaf4d978126ddd29, type: 3}
+  hitEffectUp5: {fileID: 2635611957859444748, guid: bd718d1b5638a024e9fb7b0691792237, type: 3}
+  hitEffectUp6: {fileID: 4230451649365395221, guid: 7fac79d8ba2422a44a70e01d539b8de6, type: 3}
+  hitEffectDown1: {fileID: 7838360083195623673, guid: 247b92c0853a4434a9db14208c068066, type: 3}
+  hitEffectDown2: {fileID: 2465585852584708508, guid: f63510b441d65af4fbef39de47eb6d18, type: 3}
+  hitEffectDown3: {fileID: 1846977664956023861, guid: d931d7774190683458f5fb78abd3b9e0, type: 3}
+  hitEffectDown4: {fileID: 7558675767614661090, guid: 5ebe3ebb37117cc4aa0686469fc9d779, type: 3}
+  hitEffectDown5: {fileID: 1174398577403735262, guid: 9db410644c3f02b4d8be65cf4e565919, type: 3}
+  hitEffectDown6: {fileID: 5083938339417335769, guid: 727373f83ac97bd4893e0dd6bef0e02f, type: 3}
+  hitEffectLeft1: {fileID: 7983357164133217403, guid: 7981770587708074e899aa441b2eb6ab, type: 3}
+  hitEffectLeft2: {fileID: 3938225863087518727, guid: c09d780c8e401b642ab00a35c4465c0e, type: 3}
+  hitEffectLeft3: {fileID: 3929654788213865653, guid: e844d5fe2885be8489086e55e44df42f, type: 3}
+  hitEffectLeft4: {fileID: 1574961514924784411, guid: 0aafe88a1afd21344b534dd743d5bd04, type: 3}
+  hitEffectLeft5: {fileID: 829229980674315907, guid: 1c76f8e597756434f9e3ba46c6f28996, type: 3}
+  hitEffectLeft6: {fileID: 8086191421027714835, guid: f826ab369c5c2ec449e11e78e9558582, type: 3}
+  hitEffectRight1: {fileID: 1034712789078917017, guid: a5a3f99fe04460c43a635b9141bb15d9, type: 3}
+  hitEffectRight2: {fileID: 4269307831055259646, guid: 677ecb631c3037b4998bf2d099ff3b37, type: 3}
+  hitEffectRight3: {fileID: 6585693183408754730, guid: 2bddd28088021a149ad2d7fed1003251, type: 3}
+  hitEffectRight4: {fileID: 2380031373695416300, guid: 409e3b803a6813248a7720abf97a870b, type: 3}
+  hitEffectRight5: {fileID: 7474616968962823543, guid: 0ac80191cd2711243ae6f624539207fd, type: 3}
+  hitEffectRight6: {fileID: 3596571791945532280, guid: ba810c05e9d8dcc47b4b09991a69b34c, type: 3}
+  hitEffectForMortar1: {fileID: 0}
+  hitEffectForMortar2: {fileID: 0}
+  hitEffectForMortar3: {fileID: 0}
+  hitEffectForMortar4: {fileID: 0}
+  hitEffectForMortar5: {fileID: 0}
+  hitEffectForMortar6: {fileID: 0}
+  explosion: {fileID: 0}
+  damage: 5
+  range: 5
+  explosionRange: 0
+  fireRate: 0.25
